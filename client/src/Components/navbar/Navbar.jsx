@@ -20,8 +20,8 @@ function NavbarMenu() {
                         </NavDropdown>
                     </Nav>
                     <Nav>
-                        <Nav.Link href="#deets" className={`${styles.link} ${styles.main}`}>Login</Nav.Link>
-                        <Nav.Link href="#deets" className={`${styles.link} ${styles.main}`}>Register</Nav.Link>
+                        <Nav.Link as={Link} to='/login' className={`${styles.link} ${styles.main}`}>Login</Nav.Link>
+                        <Nav.Link as={Link} to='/register' className={`${styles.link} ${styles.main}`}>Register</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

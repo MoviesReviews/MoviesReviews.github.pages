@@ -5,6 +5,8 @@ import Navbar from './Components/navbar/Navbar'
 import { Route, Routes } from 'react-router-dom'
 import AllUsers from './Components/users/Users'
 import './App.css'
+import Login from './Components/login/Login'
+import Register from './Components/register/Register'
 
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
           <Route path='/' element={<Home />}/>
           <Route path='/movie-reviews' element={<Reviews />}/>
           <Route path='/users' element={<AllUsers />}/>
+          <Route path='/login' element={<Login />}/>
+          <Route path='/register' element={<Register />}/>
         </Routes>
 
         <Footer />

@@ -1,4 +1,4 @@
-
+import { Link } from 'react-router-dom';
 
 function Banner() {
   return (
@@ -13,9 +13,7 @@ function Banner() {
             <p className="site-title-desc">
               Great place for making friends anf having fun while commenting movies you love.
             </p>
-            <a className="banner-btn" href="#">
-              Join us now
-            </a>
+            <Link to='/register' className='banner-btn'>Join us now</Link>
           </div>
         </div>
       </div>
