@@ -1,4 +1,15 @@
+import { useEffect, useState } from "react"
+import * as reviewService from '../../services/reviewsServices'
+
 function Reviews() {
+    const [reviews, setReviews] = useState([])
+
+    useEffect(() => {
+        reviewService.getAll().then(setReviews)
+    }, [])
+
+    console.log(reviews)
+    
     return (
         <section>
             <div className="content-container">

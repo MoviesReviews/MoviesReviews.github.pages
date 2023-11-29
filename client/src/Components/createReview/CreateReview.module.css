@@ -1,0 +1,14 @@
+.heading{
+    font-size: 32px;
+    margin-bottom: 2em;
+}
+
+.description-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.description-container textarea{
+    flex-basis: 100%;
+    padding-bottom: 2em;
+}

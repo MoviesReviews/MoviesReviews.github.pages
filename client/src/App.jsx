@@ -7,6 +7,7 @@ import AllUsers from './Components/users/Users'
 import './App.css'
 import Login from './Components/login/Login'
 import Register from './Components/register/Register'
+import CreateReview from './Components/createReview/CreateReview'
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path='/users' element={<AllUsers />}/>
           <Route path='/login' element={<Login />}/>
           <Route path='/register' element={<Register />}/>
+          <Route path='/create-review' element={<CreateReview />}/>
         </Routes>
 
         <Footer />
