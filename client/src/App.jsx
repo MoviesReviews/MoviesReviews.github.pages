@@ -1,27 +1,27 @@
-import './App.css'
-import Banner from './Components/Banner'
-import Footer from './Components/Foooter'
-import JoinUs from './Components/JoinUs'
-import LastReview from './Components/LastReview'
-import Menu from './Components/Menu'
-import RelevantUsers from './Components/MostRelevantUsers'
+import Banner from './Components/banner/Banner'
+import Movies from './Components/movies/Movies'
+import RelevantReviews from './Components/relevantReviews/RelevantReviews'
+import ActiveUsers from './Components/activeUsers/ActiveUsers'
+import Footer from './Components/footer/Foooter'
+import Navbar from './Components/banner/navbar/Navbar'
 
+Movies
 function App() {
 
   return (
     <>
       <div className="main-container yoga-template">
-        <Banner/>
+        <Navbar/>
+        
+        <Banner />
 
-        <Menu/>
+        <Movies />
 
-        <LastReview/>
+        <RelevantReviews />
 
-        <RelevantUsers/>
+        <ActiveUsers />
 
-        <JoinUs/>
-
-        <Footer/>
+        <Footer />
       </div>
 
     </>

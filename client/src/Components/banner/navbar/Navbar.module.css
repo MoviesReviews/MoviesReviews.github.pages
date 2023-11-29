@@ -1,0 +1,22 @@
+.navbar-container {
+    background-color: rgb(123, 108, 2013, 25%);
+}
+
+.navbar-container #responsive-navbar-nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-container .link{
+    border-radius: 20%;
+    padding: 0.5em 1em;
+}
+
+.navbar-container .main{
+    margin-right: 1em;
+}
+
+.navbar-container .link:hover{
+    background-color: rgba(254, 134, 212, 100%);
+    /* padding: 0; */
+}

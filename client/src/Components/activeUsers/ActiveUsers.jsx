@@ -1,4 +1,4 @@
-function RelevantUsers(){
+function ActivetUsers(){
     return(
         <div className="trainer-section">
         <div className="row sections-detail">
@@ -50,4 +50,4 @@ function RelevantUsers(){
     )
 }
 
-export default RelevantUsers
+export default ActivetUsers

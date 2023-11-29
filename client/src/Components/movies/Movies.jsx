@@ -1,4 +1,4 @@
-function Menu() {
+function Movies() {
     return (
         <div className="inside-container service-section">
             <div className="row sections-detail">
@@ -162,4 +162,4 @@ function Menu() {
     )
 }
 
-export default Menu
+export default Movies

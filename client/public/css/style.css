@@ -64,7 +64,7 @@ a {
 }
 /*Banner*/
 .yoga-template .banner {
-	background-image: url(../img/movie-review\ 3.jpg);
+	background-image: url(../img/movie-banner.jpg);
 	background-repeat: no-repeat; 
 	background-size: cover;
 	background-position: center center;
@@ -72,6 +72,7 @@ a {
 	height: auto;
 	color:#fff;
 	position: relative;
+	padding-bottom: 5em;
 }
 .yoga-template .banner .banner-overlay {
 	position: absolute;
@@ -235,12 +236,13 @@ a {
   display: inline-block;
   margin-left: -1.3em; 
   width: 1.3em;
+  /* height: auto; */
   font-size: 12px;
   line-height: 40px;
   color: #7b6cd5; 
 }
 .yoga-template .best-class-club .best-class-club-img {
-	background-image: url(../img/popcorn\ 1.jpg);
+	background-image: url(../img/popcorn.jpg);
     background-size: cover;
     background-position: center left;
     background-repeat: no-repeat;
@@ -348,132 +350,7 @@ a {
 	font-weight: 400;
 	color: #666;
 }
-/*Contact us*/
-.yoga-template .contact-section {
-	padding: 60px 15px; 
-}
-.yoga-template .contact-section .appointment {
- 	border: 1px solid #666; 
- 	border-radius: 3px;
- 	padding: 30px 28px 25px;
-}
-.yoga-template .contact-section .appointment .appointment-title {
-	font-family: 'Josefin Sans', sans-serif;
-	font-size: 30px;
-	line-height: 40px;
-	font-weight: 600;
-	letter-spacing: 0.6px;
-	text-align: center;
-	color:#7b6cd5;
-}
-.yoga-template .contact-section .appointment .appointment-desc {
-	font-family: inherit;
-	font-size: 14px;
-	line-height: 20px;
-	letter-spacing: 0.56px;
-	color:#888;
-	text-align: center;
-}
- .yoga-template .contact-section .appointment .appointment-form {
- 	margin-top: 40px;
- }
-.yoga-template .contact-section .appointment 
-.appointment-form  .appointment-form-input {
-	border: 1px solid #999;
-	height: 38px;
-	margin-bottom: 9px;
-	font-size: 12px;
-	line-height: 40px;
-	letter-spacing: 0.48px;
-}
-.yoga-template .contact-section .appointment 
-.appointment-form  .data-input {
-	text-transform: uppercase;
-}
-.yoga-template .contact-section .appointment 
-.appointment-form .appointment-form-text {
-	border: 1px solid #999;
-	margin-bottom: 20px;
-	font-size: 12px;
-	line-height: 40px;
-	letter-spacing: 0.48px;
-}
-.yoga-template .contact-section .appointment 
-.appointment-form .box-select::before {
-    content: "\f0dd";
-    font-family: "Font Awesome 5 Free";
-    position: absolute;
-    top: 41%;
-    right: -5%;
-    width: 35px;
-    height: 38px;
-    text-align: center;
-    font-size: 14px;
-    line-height: 37px;
-    color: rgb(255, 255, 255);
-    background-color: rgb(123, 108, 213);
-    font-weight: 600;
-    border-radius: 3px;
-    transform: translate(-50%, -50%);
-}
-.yoga-template .contact-section .appointment 
-.appointment-form .appointment-form-col-left {
-	padding-right: 7px;
-}
-.yoga-template .contact-section .appointment 
-.appointment-form .appointment-form-col-right {
-	padding-left: 7px;
-    padding-right: 7px;
-}
 
-.yoga-template .contact-section .appointment 
-.appointment-form .appointment-form-btn {
-	width: 100%;
-    padding: 18px 0 13px;
-    background-color: #7b6cd5;
-    border: 1px solid #7b6cd5;
-    border-radius: 3px;
-    color: #fff;
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 20px;
-    line-height: 25px;
-    font-weight: 700;
-    letter-spacing: 0.6px;
-    text-transform: uppercase;
-}
-.yoga-template .contact-section .open-time {
-	text-align: center;
-}
-.yoga-template .contact-section .open-time .weekdays {
-	margin-top: 50px;
-}
-.yoga-template .contact-section .open-time .weekends {
-	margin-top: 40px;
-}
-.yoga-template .contact-section .open-time .open-time-title {
-	font-family: 'Josefin Sans', sans-serif;
-	font-size: 25px;
-	line-height: 40px;
-	font-weight: 600;
-	letter-spacing: 0.25px;
-	color: #7b6cd5;
-	margin-bottom: 5px;
-}
-.yoga-template .contact-section .open-time .open-time-clock {
-	font-family: inherit;
-	font-size: 18px;
-	line-height: 40px;
-	letter-spacing: 0.72px;
-	font-weight: 600;
-	color:#444;
-}
-.yoga-template .contact-section .open-time .open-time-course {
-	font-family: inherit;
-	font-size: inherit;
-	line-height: 40px;
-	letter-spacing: 0.6px;
-	color: inherit;
-}
 /* Trainers*/
 .yoga-template .trainer-section {
 	padding: 60px 15px;
@@ -590,11 +467,4 @@ a {
 }
 .yoga-template .footer .copyright .social .fab {
 	padding-left: 14px;
-}
-
-.ownLogo{
-	font-size: 2em;
-	font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-	border: 2px solid black;
-	border-style: groove;
 }

@@ -1,4 +1,4 @@
-function LastReview(){
+function RelevantReviews(){
     return(
         <div className="best-class-club">
           <div className="row best-class-sections-detail">
@@ -32,4 +32,4 @@ function LastReview(){
     )
 }
 
-export default LastReview
+export default RelevantReviews
