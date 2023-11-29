@@ -1,25 +1,24 @@
-import Banner from './Components/banner/Banner'
-import Movies from './Components/movies/Movies'
-import RelevantReviews from './Components/relevantReviews/RelevantReviews'
-import ActiveUsers from './Components/activeUsers/ActiveUsers'
+import Reviews from './Components/Reviews/Reviews'
 import Footer from './Components/footer/Foooter'
-import Navbar from './Components/banner/navbar/Navbar'
+import Home from './Components/home/Home'
+import Navbar from './Components/navbar/Navbar'
+import { Route, Routes } from 'react-router-dom'
+import AllUsers from './Components/users/Users'
+import './App.css'
 
-Movies
+
 function App() {
 
   return (
     <>
       <div className="main-container yoga-template">
-        <Navbar/>
-        
-        <Banner />
+        <Navbar />
 
-        <Movies />
-
-        <RelevantReviews />
-
-        <ActiveUsers />
+        <Routes>
+          <Route path='/' element={<Home />}/>
+          <Route path='/movie-reviews' element={<Reviews />}/>
+          <Route path='/users' element={<AllUsers />}/>
+        </Routes>
 
         <Footer />
       </div>

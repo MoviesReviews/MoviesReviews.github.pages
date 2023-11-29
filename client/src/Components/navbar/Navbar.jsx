@@ -3,18 +3,19 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import styles from './Navbar.module.css'
+import { Link } from 'react-router-dom';
 
 function NavbarMenu() {
     return (
         <Navbar collapseOnSelect expand="lg" className={`bg - body - tertiary' ${styles['navbar-container']}`}  >
             <Container>
-                <Navbar.Brand href="#home">Movie Reviews</Navbar.Brand>
+                <Navbar.Brand as={Link} to='/' href="#home">Movie Reviews</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
                         <NavDropdown title="Menu" id="collasible-nav-dropdown" className={styles.main}>
-                            <NavDropdown.Item href="#action/3.1" className={styles.link}>Reviews</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2" className={styles.link}>Users</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to='/movie-reviews' className={styles.link}>Reviews</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to='/users' className={styles.link}>Users</NavDropdown.Item>
                             <NavDropdown.Divider />
                         </NavDropdown>
                     </Nav>
