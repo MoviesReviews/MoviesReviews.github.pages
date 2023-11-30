@@ -1,4 +1,4 @@
-.cards-container{
+.cards-container {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -6,16 +6,24 @@
     margin: 2em 0;
 }
 
-.section{
+.section {
     max-width: 100%;
     max-height: 50%;
     margin: 3em;
 }
 
-.content-container{
-    background-color: rgba(241, 194, 225, 0.5);
-    padding: 5em 15em;
-    border-radius: 2em;
-    border-style:groove;
+.background{
+    background-color: black;
+    background-image: url('../../../img/backgrounReviews.jpg');
+    /* background-repeat: no-repeat; */
+    background-position: center center;
+    background-size: contain;
 }
 
+.content-container {
+    opacity: 100%;
+    padding: 5em 15em;
+    border-radius: 2em;
+    border-style: groove;
+
+}
