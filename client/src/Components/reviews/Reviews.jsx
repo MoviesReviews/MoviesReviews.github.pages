@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import * as reviewService from '../../services/reviewsServices'
 import styles from './Reviews.module.css'
+import Card from "./card/Card"
 
 function Reviews() {
     const [reviews, setReviews] = useState([])
@@ -12,16 +13,14 @@ function Reviews() {
     console.log(reviews)
 
     return (
-        <section className={styles.container}>
+        <section>
             <div className="content-container">
                 <h1>All Reviews</h1>
-                {reviews.map(r => (
-                    <div key={r._id} >
-                        <p>Title: {r.title}</p>
-                        <p>IMAGE: !!!</p>
-                        <p>Description: {r.description}</p>
-                    </div>
-                ))}
+                <div className={styles['cards-container']}>
+                    {reviews.map(r => {
+                        return <Card key={r._id} review={r}/>
+                    })}
+                </div>
             </div>
         </section>
     )

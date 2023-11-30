@@ -16,6 +16,9 @@ async function request(method, url, body){
         if(!response.ok){
             throw new Error(response.error)
         }
+        if(response.status == 204){
+            return []
+        }
         return await response.json()
     } catch (error) {
         console.log(error.message)
