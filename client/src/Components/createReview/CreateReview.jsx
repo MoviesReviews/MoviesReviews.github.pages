@@ -61,7 +61,7 @@ function CreateReview() {
     }
 
     return (
-        <section>
+        <section className='section-container'>
             <div className="content-container">
                 <h1 className='heading'>Write your own review</h1>
 

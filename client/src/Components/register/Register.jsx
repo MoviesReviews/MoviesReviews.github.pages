@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form';
 
 function Register() {
     return (
-        <section>
+        <section className='section-container'>
             <div className="content-container">
                 <h1 className='heading'>Register</h1>
                 

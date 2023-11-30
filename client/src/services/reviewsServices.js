@@ -8,7 +8,7 @@ export const getAll = async () => {
 
 export const getOne = async (id) => {
     const result = await request.get(baseUrl + `/${id}`)
-    return Object.values(result)
+    return result
 }
 
 export const createReview = async (data) => {

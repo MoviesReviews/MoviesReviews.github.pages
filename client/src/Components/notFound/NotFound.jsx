@@ -5,7 +5,7 @@ function NotFound(){
     return(
         <div className={styles.container}>
             <p className={styles.heading}>PAGE NOT FOUND 404</p>
-            <label htmlFor="homeLink" className={styles.label}>Back to <Link to='/' id='homeLink' className={styles.link}>Home</Link></label>
+            <label htmlFor="homeLink" >Back to <Link  to='/' id='homeLink' className={styles.link}>Home</Link></label>
         </div>
     )
 }

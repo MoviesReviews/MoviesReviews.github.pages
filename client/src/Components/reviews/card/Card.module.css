@@ -4,21 +4,42 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 2em;
+    gap: 1em;
+    border-radius: 1em;
     border-style: groove;
+    padding: 2em;
 }
 
 .img-container{
     background-color: rgb(196, 192, 192);
     border-radius: 50%;
-    padding: 1em;
-    max-width: 8em;
-    max-height: 8em;
+    /* padding: 1em; */
+    max-width: 10em;
+    max-height: 10em;
     aspect-ratio: 1/1;
+    overflow: hidden;
 }
 
-/* .img{
-    width: 5em;
-    height: 5em;
-    aspect-ratio: 1/1;
-} */
+.img{
+    width: 10em;
+    height: 10em;
+    /* overflow: hidden; */
+    /* aspect-ratio: 1/1; */
+}
+
+.btn{
+    padding: 0.5em 1em;
+    background-color: beige;
+    border-radius: 2em;
+    border: 2px solid black;
+    margin: 0.2em;
+    border-style: dashed;
+    color: black;
+}
+
+.btn:hover{
+    list-style: none;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+}

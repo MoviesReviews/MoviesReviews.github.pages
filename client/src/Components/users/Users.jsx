@@ -1,6 +1,6 @@
 function AllUsers() {
     return (
-        <section>
+        <section className='section-container'>
             <div className="content-container">
                 <h1>Existing Users</h1>
             </div>

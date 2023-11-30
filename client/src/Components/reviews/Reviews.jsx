@@ -8,15 +8,15 @@ function Reviews() {
 
     useEffect(() => {
         reviewService.getAll().then(setReviews)
-    }, [])
+    }, [reviews])
 
     console.log(reviews)
 
     return (
-        <div className="background">
+        <div className={styles.background}>
             <section className={styles.section}>
                 <div className={styles["content-container"]}>
-                    <h1 className='heading'>All Reviews</h1>
+                    <h1 className={`heading ${styles.heading}`}>All Reviews</h1>
                     <div className={styles['cards-container']}>
                         {reviews.map(r => {
                             return <Card key={r._id} review={r} />

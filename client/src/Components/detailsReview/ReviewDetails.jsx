@@ -1,29 +1,38 @@
 import { useEffect, useState } from "react"
 import * as reviewsSwervice from '../../services/reviewsServices'
 import { useParams } from "react-router-dom"
+import styles from './ReviewDetails.module.css'
 
 function ReviewDetails() {
     const [review, setReview] = useState({})
-    const {id} = useParams()
+    const { id } = useParams()
     useEffect(() => {
         reviewsSwervice.getOne(id).then(data => {
             setReview(data)
         })
     }, [id])
-    console.log(review)
-    // const categoryFormatted = review.category.join(', ')
+    const categoryFormatted = review.category
+    // console.log(typeof categoryFormatted)
 
     return (
-        <section>
-            <div className="content-container">
-                <h1 className='heading'>Details</h1>
-                <div className="details">
-                    <p>Title: {review.title}</p>
+        <section className='section-container'>
+            <div className={`content-container ${styles['main-container']}`}>
+                <div className="details-container-left">
+                    <h1 className='heading'>Details about review: {review.title}</h1>
+                    <label htmlFor="author">Wrote:</label>
+                    <p id="author">{ }</p>
                     <p>
-                        <img src={review.imgUrl} alt="image" />
+                        <img className={`img ${styles.img}`} src={review.imgUrl} alt="image" />
                     </p>
-                    <p>Description: {review.description}</p>
-                    {/* <p>Category: {categoryFormatted}</p> */}
+                </div>
+
+                <div className={styles['details-container-right']}>
+                    <label htmlFor="description">Description:</label>
+                    <p id="description" className={styles.description}>{review.description}</p>
+                    <div className="category">
+                        <label htmlFor="category">Category:</label>
+                        <p id="category">{categoryFormatted?.join(', ')}</p>
+                    </div>
                 </div>
             </div>
         </section>
