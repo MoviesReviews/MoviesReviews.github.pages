@@ -25,6 +25,7 @@ function CreateReview() {
 
     const changeHandler = (e) => {
         let value = e.target.value
+        console.log(e.target)
         setFormState(state => (
             {
                 ...state,

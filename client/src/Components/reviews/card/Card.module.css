@@ -1,0 +1,19 @@
+.card-container{
+    flex-basis: 30%;
+    background-color: beige;
+}
+
+.img-container{
+    background-color: rgb(196, 192, 192);
+    border-radius: 50%;
+    padding: 1em;
+    max-width: 8em;
+    max-height: 8em;
+    aspect-ratio: 1/1;
+}
+
+.img{
+    width: 5em;
+    height: 5em;
+    aspect-ratio: 1/1;
+}
