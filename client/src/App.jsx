@@ -8,6 +8,8 @@ import './App.css'
 import Login from './Components/login/Login'
 import Register from './Components/register/Register'
 import CreateReview from './Components/createReview/CreateReview'
+import ReviewDetails from './Components/detailsReview/ReviewDetails'
+import NotFound from './Components/notFound/NotFound'
 
 
 function App() {
@@ -20,10 +22,12 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />}/>
           <Route path='/movie-reviews' element={<Reviews />}/>
+          <Route path='/movie-reviews/:id/details' element={<ReviewDetails />}/>
+          <Route path='/create-review' element={<CreateReview />}/>
           <Route path='/users' element={<AllUsers />}/>
           <Route path='/login' element={<Login />}/>
           <Route path='/register' element={<Register />}/>
-          <Route path='/create-review' element={<CreateReview />}/>
+          <Route path='*' element={<NotFound />}/>
         </Routes>
 
         <Footer />

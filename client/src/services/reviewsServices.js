@@ -6,6 +6,11 @@ export const getAll = async () => {
     return Object.values(result)
 }
 
+export const getOne = async (id) => {
+    const result = await request.get(baseUrl + `/${id}`)
+    return Object.values(result)
+}
+
 export const createReview = async (data) => {
     return await request.post(baseUrl, data)
 }

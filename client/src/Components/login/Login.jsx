@@ -5,7 +5,7 @@ function Login() {
     return (
         <section>
             <div className="content-container">
-                <h1>Login</h1>
+                <h1 className='heading'>Login</h1>
 
                 <Form>
                     <Form.Group className="mb-3" controlId="formBasicEmail">

@@ -13,9 +13,9 @@ function Reviews() {
     console.log(reviews)
 
     return (
-        <section>
-            <div className="content-container">
-                <h1>All Reviews</h1>
+        <section className={styles.section}>
+            <div className={styles["content-container"]}>
+                <h1 className='heading'>All Reviews</h1>
                 <div className={styles['cards-container']}>
                     {reviews.map(r => {
                         return <Card key={r._id} review={r}/>

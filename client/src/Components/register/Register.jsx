@@ -5,7 +5,7 @@ function Register() {
     return (
         <section>
             <div className="content-container">
-                <h1>Register</h1>
+                <h1 className='heading'>Register</h1>
                 
                 <Form>
                     <Form.Group className="mb-3" controlId="formBasicEmail">

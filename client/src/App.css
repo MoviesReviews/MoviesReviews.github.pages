@@ -22,3 +22,8 @@ div .content-container{
     width: 50%;
     height: auto
 }
+
+.heading{
+    font-size: 32px;
+    margin-bottom: 2em;
+}

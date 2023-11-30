@@ -8,7 +8,7 @@ function Card({review}){
             <img className='img' src={review.imgUrl} alt="image" />
             </p>
             <p>Title: {review.title}</p>
-            <Link to={`/reviews/${review._id}/details`}>
+            <Link to={`/movie-reviews/${review._id}/details`}>
             <button>Details</button>
             </Link>
         </div>

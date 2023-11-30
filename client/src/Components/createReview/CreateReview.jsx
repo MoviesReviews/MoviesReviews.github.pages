@@ -63,7 +63,7 @@ function CreateReview() {
     return (
         <section>
             <div className="content-container">
-                <h1 className={styles.heading}>Write your own review</h1>
+                <h1 className='heading'>Write your own review</h1>
 
                 <Form onSubmit={onCreateHandler}>
                     <Form.Group className="mb-3">
