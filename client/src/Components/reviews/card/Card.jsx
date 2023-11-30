@@ -1,4 +1,5 @@
-import * as styles from'./Card.module.css' 
+import styles from'./Card.module.css' 
+import { Link } from 'react-router-dom';
 
 function Card({review}){
     return(
@@ -6,8 +7,10 @@ function Card({review}){
             <p className={styles['img-container']}>
             <img className='img' src={review.imgUrl} alt="image" />
             </p>
-            <p>{review.title}</p>
-            <p>{review.description}</p>
+            <p>Title: {review.title}</p>
+            <Link to={`/reviews/${review._id}/details`}>
+            <button>Details</button>
+            </Link>
         </div>
     )
 }
