@@ -73,12 +73,14 @@ function CreateReview() {
                         <Form.Label htmlFor="description">Description: </Form.Label>
                         <textarea value={formState.description} onChange={changeHandler} name='description' id='description' placeholder='Describe your review..' />
                     </Form.Group>
+
+                    <Form.Label htmlFor="imgUrl">Image: </Form.Label>
                     <Form.Group className={`mb-3 ${styles['description-container']}`}>
-                        <Form.Label htmlFor="imgUrl">Image: </Form.Label>
                         <input value={formState.imgUrl} onChange={changeHandler} name='imgUrl' id='imgUrl' placeholder='http://..' />
                     </Form.Group>
 
-                    <Form.Group className="mb-3">
+                    <Form.Group className={`mb-3 ${styles['checkbox-container']}`}>
+                        <label>Category: </label>
                         <Form.Check
                             type="checkbox"
                             id="horror"
@@ -136,7 +138,7 @@ function CreateReview() {
                             checked={formState.other}
                         />
                     </Form.Group>
-                    <Button type="submit">Submit</Button>
+                    <Button type="submit" className='button'>Submit</Button>
                 </Form>
             </div>
         </section>
