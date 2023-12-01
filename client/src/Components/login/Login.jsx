@@ -1,11 +1,12 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import styles from '../login/Login.module.css'
 
 function Login() {
     return (
         <section className='section-container'>
             <div className="content-container">
-                <h1 className='heading'>Login</h1>
+                <h1 className={`heading ${styles.heading}`}>Login</h1>
 
                 <Form>
                     <Form.Group className="mb-3" controlId="formBasicEmail">

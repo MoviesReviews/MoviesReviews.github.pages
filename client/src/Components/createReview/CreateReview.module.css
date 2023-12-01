@@ -2,6 +2,7 @@
 .description-container{
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .description-container textarea{
@@ -9,8 +10,21 @@
     padding-bottom: 2em;
 }
 
+.description-container input{
+    padding: 0.5em;
+    border-radius: 1em;
+}
+
 .checkbox-container{
     display: flex;
     gap: 1em;
+}
+
+.errorInput{
+    border: 1px solid red;
+}
+
+.errorMsg{
+    color: red;
 }
 

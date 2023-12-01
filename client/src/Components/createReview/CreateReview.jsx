@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import styles from './CreateReview.module.css'
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import * as reviewService from '../../services/reviewsServices'
 import { useNavigate } from 'react-router-dom'
 
@@ -20,16 +20,22 @@ function CreateReview() {
         other: false,
     }
     const [formState, setFormState] = useState(formInitialState) //NO ZASHTO???
+    const [errors, setErrors] = useState({})
+    const titleRef = useRef()
+    const submitBtn = useRef()
     const navigate = useNavigate()
+
+    useEffect(() => {
+        titleRef.current.focus()
+    }, [])
 
 
     const changeHandler = (e) => {
         let value = e.target.value
-        console.log(e.target)
         setFormState(state => (
             {
                 ...state,
-                [e.target.name]: value
+                [e.target.name]: value,
             }
         ))
     }
@@ -60,6 +66,31 @@ function CreateReview() {
         navigate('/movie-reviews')
     }
 
+    const titleValidateHandler = (e) => {
+        if (e.target.value.length < 2) {
+            console.log('??');
+            setErrors(s => ({ ...s, title: 'Title must be at least 2 characters long' }))
+        } else {
+            setErrors(s => ({ ...s, title: '' }))
+        }
+    }
+    
+    const descriptionValidator = (e) => {
+        if (e.target.value.length < 10) {
+            setErrors(s => ({ ...s, description: 'Descpription must be at least 10 characters long' }))
+        } else {
+            setErrors(s => ({ ...s, description: '' }))
+        }
+    }
+    
+    const imgValidatator = (e) => {
+        if (!e.target.value.startsWith('http://')) {
+            setErrors(s => ({ ...s, imgUrl: 'Image must start with http://' }))
+        } else {
+            setErrors(s => ({ ...s, imgUrl: '' }))
+        }
+    }
+
     return (
         <section className='section-container'>
             <div className="content-container">
@@ -67,17 +98,20 @@ function CreateReview() {
 
                 <Form onSubmit={onCreateHandler}>
                     <Form.Group className="mb-3">
-                        <Form.Label htmlFor="title">Title: </Form.Label>
-                        <Form.Control value={formState.title} onChange={changeHandler} name='title' id="title" placeholder="Write appropriate title.." />
+                        <Form.Label htmlFor="title">* Title: </Form.Label>
+                        <Form.Control className={errors.title && styles.errorInput} value={formState.title} onChange={changeHandler} ref={titleRef} onBlur={titleValidateHandler} name='title' id="title" placeholder="Write appropriate title.." />
+                        {errors.title && <p className={styles.errorMsg}>{errors.title}</p>}
                     </Form.Group>
                     <Form.Group className={`mb-3 ${styles['description-container']}`}>
-                        <Form.Label htmlFor="description">Description: </Form.Label>
-                        <textarea value={formState.description} onChange={changeHandler} name='description' id='description' placeholder='Describe your review..' />
+                        <Form.Label htmlFor="description">* Description: </Form.Label>
+                        <textarea value={formState.description} onChange={changeHandler} onBlur={descriptionValidator} className={errors.description && styles.errorInput} name='description' id='description' placeholder='Describe your review..' />
+                        {errors.description && <p className={styles.errorMsg}>{errors.description}</p>}
                     </Form.Group>
 
-                    <Form.Label htmlFor="imgUrl">Image: </Form.Label>
                     <Form.Group className={`mb-3 ${styles['description-container']}`}>
-                        <input value={formState.imgUrl} onChange={changeHandler} name='imgUrl' id='imgUrl' placeholder='http://..' />
+                        <Form.Label htmlFor="imgUrl">* Image: </Form.Label>
+                        <input value={formState.imgUrl} onChange={changeHandler} className={errors.imgUrl && styles.errorInput} onBlur={imgValidatator} name='imgUrl' id='imgUrl' placeholder='http://..' />
+                        {errors.imgUrl && <p className={styles.errorMsg}>{errors.imgUrl}</p>}
                     </Form.Group>
 
                     <Form.Group className={`mb-3 ${styles['checkbox-container']}`}>
@@ -139,10 +173,14 @@ function CreateReview() {
                             checked={formState.other}
                         />
                     </Form.Group>
-                    <Button type="submit" className='button'>Submit</Button>
+                    <p> * - Required fields</p>
+                    <fieldset disabled={Object.values(errors).some(v => v)}>
+                        <Button ref={submitBtn} type="submit" className='button' disabled={Object.values(errors).some(v => v)} >Submit</Button>
+                        {/* {submitBtn.current.disabled == true && submitBtn.current.className={`button ${styles.disabledBtn}`}} */}
+                    </fieldset>
                 </Form>
             </div>
-        </section>
+        </section >
     )
 }
 
