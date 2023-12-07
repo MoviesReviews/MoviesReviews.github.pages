@@ -12,7 +12,7 @@ function ReviewDetails() {
             setReview(data)
         })
     }, [id])
-    const categoryFormatted = review.category
+    const categoryFormatted = review.category?.map(c => c.charAt(0).toUpperCase() + c.slice(1))
 
     return (
         <section className='section-container'>
@@ -33,7 +33,7 @@ function ReviewDetails() {
                         <label htmlFor="category">Category:</label>
                         <p id="category">{categoryFormatted?.join(', ')}</p>
                     </div>
-                <Comments reviewId={id}/>
+                    <Comments reviewId={id} />
                 </div>
             </div>
         </section>

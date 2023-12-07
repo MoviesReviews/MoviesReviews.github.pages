@@ -33,3 +33,13 @@ export const createReview = async (data) => {
         console.log(err);
     }
 }
+
+export const getLatest = async () => {
+    try {
+        const data =  await request.get(`${baseUrl}?sortBy=_createdOn%20desc`)
+        console.log(data)
+        return data
+    } catch (err) {
+        console.log(err);
+    }
+}

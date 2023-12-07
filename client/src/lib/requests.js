@@ -21,7 +21,7 @@ async function request(method, url, body) {
         }
         return await response.json()
     } catch (error) {
-        console.log(error)
+        throw new Error(error)
     }
 }
 

@@ -28,3 +28,11 @@ div .content-container{
     font-size: 32px;
     margin-bottom: 2em;
 }
+
+.errorInput{
+    border: 1px solid red;
+}
+
+.errorMsg{
+    color: red;
+}
