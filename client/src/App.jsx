@@ -25,8 +25,14 @@ function App() {
   const registerHandler = async (registerState) => {
     const category = Object.entries(registerState).filter(x => x[1] == true).map(x => x[0]).join(', ')
 
-    const data = await userService.register( registerState.email, registerState.password, registerState.username, category)
-    console.log(data)
+    const data = await userService.register(registerState.email, registerState.password, registerState.username, category)
+    setAuthState(data)
+    localStorage.setItem('token', data.accessToken)
+    navigate('/')
+  }
+
+  const loginHandler = async (loginState) => {
+    const data = await userService.login(loginState.email, loginState.password)
     setAuthState(data)
     localStorage.setItem('token', data.accessToken)
     navigate('/')
@@ -38,14 +44,14 @@ function App() {
         <Navbar />
 
         <Routes>
-          <Route path='/' element={<Home />}/>
-          <Route path='/movie-reviews' element={<Reviews />}/>
-          <Route path='/movie-reviews/:id/details' element={<ReviewDetails />}/>
-          <Route path='/create-review' element={<CreateReview />}/>
-          <Route path='/users' element={<AllUsers />}/>
-          <Route path='/login' element={<Login />}/>
-          <Route path='/register' element={<Register registerHandler={registerHandler} />}/>
-          <Route path='*' element={<NotFound />}/>
+          <Route path='/' element={<Home />} />
+          <Route path='/movie-reviews' element={<Reviews />} />
+          <Route path='/movie-reviews/:id/details' element={<ReviewDetails />} />
+          <Route path='/create-review' element={<CreateReview />} />
+          <Route path='/users' element={<AllUsers />} />
+          <Route path='/login' element={<Login loginHandler={loginHandler} />} />
+          <Route path='/register' element={<Register registerHandler={registerHandler} />} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
 
         <Footer />

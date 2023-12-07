@@ -11,3 +11,11 @@ export const register = async (email, password, username, category) => {
     })
     return data
 }
+
+export const login = async (email, password) => {
+    const data = await requests.post(`${baseUrl}/login`, {
+        email,
+        password
+    })
+    return data
+}
