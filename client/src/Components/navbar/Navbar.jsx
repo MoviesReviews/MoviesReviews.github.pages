@@ -4,8 +4,12 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import styles from './Navbar.module.css'
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../../contexts/authContext';
 
 function NavbarMenu() {
+    const authContext = useContext(AuthContext)
+
     return (
         <Navbar collapseOnSelect expand="lg" className={`bg - body - tertiary' ${styles['navbar-container']}`}  >
             <Container>
@@ -20,10 +24,23 @@ function NavbarMenu() {
                         </NavDropdown>
                     </Nav>
                     <Nav>
-                        <Nav.Link as={Link} to='/login' className={`${styles.link} ${styles.main}`}>Login</Nav.Link>
-                        <Nav.Link as={Link} to='/register' className={`${styles.link} ${styles.main}`}>Register</Nav.Link>
-                        <Nav.Link as={Link} to='/create-review' className={`${styles.link} ${styles.main}`}>Write Review</Nav.Link>
+                        <h1>Hello, {authContext.username}</h1>
+
+                        {authContext.isAuthenticated &&
+                            <div>
+                                <Nav.Link as={Link} to='/create-review' className={`${styles.link} ${styles.main}`}>Write Review</Nav.Link>
+                                <Nav.Link as={Link} to='/logout' className={`${styles.link} ${styles.main}`}>Logout</Nav.Link>
+                            </div>
+                        }
+                        {!authContext.isAuthenticated &&
+                            <div>
+                                <Nav.Link as={Link} to='/login' className={`${styles.link} ${styles.main}`}>Login</Nav.Link>
+                                <Nav.Link as={Link} to='/register' className={`${styles.link} ${styles.main}`}>Register</Nav.Link>
+                            </div>
+                        }
                     </Nav>
+
+
                 </Navbar.Collapse>
             </Container>
         </Navbar >

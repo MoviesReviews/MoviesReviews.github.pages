@@ -12,6 +12,7 @@ import ReviewDetails from './Components/detailsReview/ReviewDetails'
 import NotFound from './Components/notFound/NotFound'
 import * as userService from './services/userService'
 import { useState } from 'react'
+import { AuthContext } from './contexts/authContext'
 
 
 function App() {
@@ -38,23 +39,33 @@ function App() {
     navigate('/')
   }
 
+  const authContext = {
+    email: authState.email,
+    username: authState.username,
+    token: authState.accessToken,
+    _id: authState._id,
+    isAunthenticated: !!authState.email
+  }
+
   return (
     <>
       <div className="main-container yoga-template">
-        <Navbar />
+        <AuthContext.Provider value={authContext}>
+          <Navbar />
 
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/movie-reviews' element={<Reviews />} />
-          <Route path='/movie-reviews/:id/details' element={<ReviewDetails />} />
-          <Route path='/create-review' element={<CreateReview />} />
-          <Route path='/users' element={<AllUsers />} />
-          <Route path='/login' element={<Login loginHandler={loginHandler} />} />
-          <Route path='/register' element={<Register registerHandler={registerHandler} />} />
-          <Route path='*' element={<NotFound />} />
-        </Routes>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/movie-reviews' element={<Reviews />} />
+            <Route path='/movie-reviews/:id/details' element={<ReviewDetails />} />
+            <Route path='/create-review' element={<CreateReview />} />
+            <Route path='/users' element={<AllUsers />} />
+            <Route path='/login' element={<Login loginHandler={loginHandler} />} />
+            <Route path='/register' element={<Register registerHandler={registerHandler} />} />
+            <Route path='*' element={<NotFound />} />
+          </Routes>
 
-        <Footer />
+          <Footer />
+        </AuthContext.Provider>
       </div>
 
     </>
