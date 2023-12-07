@@ -2,14 +2,16 @@
     background-color: rgb(123, 108, 2013, 25%);
 }
 
-.navbar-container #responsive-navbar-nav{
+.navbar{
     display: flex;
     justify-content: space-between;
 }
 
 .navbar-container .link{
-    border-radius: 20%;
+    border-radius: 30%;
     padding: 0.5em 1em;
+    margin-bottom: 0.5em;
+    font-weight: 500;
 }
 
 .navbar-container .main{
@@ -18,5 +20,8 @@
 
 .navbar-container .link:hover{
     background-color: rgba(254, 134, 212, 100%);
-    /* padding: 0; */
+}
+
+.helloMsg{
+    padding-top: 12px;
 }

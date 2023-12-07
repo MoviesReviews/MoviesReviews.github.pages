@@ -44,7 +44,7 @@ function App() {
     username: authState.username,
     token: authState.accessToken,
     _id: authState._id,
-    isAunthenticated: !!authState.email
+    isAuthenticated: !!authState.email
   }
 
   return (

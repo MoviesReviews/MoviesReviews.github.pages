@@ -15,32 +15,34 @@ function NavbarMenu() {
             <Container>
                 <Navbar.Brand as={Link} to='/' href="#home">Movie Reviews</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="me-auto">
-                        <NavDropdown title="Menu" id="collasible-nav-dropdown" className={styles.main}>
-                            <NavDropdown.Item as={Link} to='/movie-reviews' className={styles.link}>Reviews</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to='/users' className={styles.link}>Users</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                        </NavDropdown>
-                    </Nav>
-                    <Nav>
-                        <h1>Hello, {authContext.username}</h1>
+                <Navbar.Collapse id="responsive-navbar-nav" className={styles.navbar}>
+                    <div className={styles.left}>
+                        <Nav className="me-auto">
+                            <NavDropdown title="Menu" id="collasible-nav-dropdown" className={styles.main}>
+                                <NavDropdown.Item as={Link} to='/movie-reviews' className={styles.link}>Reviews</NavDropdown.Item>
+                                <NavDropdown.Item as={Link} to='/users' className={styles.link}>Users</NavDropdown.Item>
+                                <NavDropdown.Divider />
+                            </NavDropdown>
+                        <h1 className={styles.helloMsg}>Hello, {authContext.username}</h1>
+                        </Nav>
+                    </div>
+
+                    <div className={styles.right}>
 
                         {authContext.isAuthenticated &&
-                            <div>
+                            <Nav>
                                 <Nav.Link as={Link} to='/create-review' className={`${styles.link} ${styles.main}`}>Write Review</Nav.Link>
                                 <Nav.Link as={Link} to='/logout' className={`${styles.link} ${styles.main}`}>Logout</Nav.Link>
-                            </div>
+                            </Nav>
                         }
                         {!authContext.isAuthenticated &&
-                            <div>
+                            <Nav>
                                 <Nav.Link as={Link} to='/login' className={`${styles.link} ${styles.main}`}>Login</Nav.Link>
                                 <Nav.Link as={Link} to='/register' className={`${styles.link} ${styles.main}`}>Register</Nav.Link>
-                            </div>
+                            </Nav>
                         }
-                    </Nav>
 
-
+                    </div>
                 </Navbar.Collapse>
             </Container>
         </Navbar >
