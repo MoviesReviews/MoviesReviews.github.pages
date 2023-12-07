@@ -4,6 +4,7 @@ import styles from './CreateReview.module.css'
 import { useEffect, useRef, useState } from 'react';
 import * as reviewService from '../../services/reviewsServices'
 import { useNavigate } from 'react-router-dom'
+// import CreatedAlert from '../createReview/CreatedAlert';
 
 function CreateReview() {
     const formInitialState = {
@@ -61,8 +62,8 @@ function CreateReview() {
             category,
             imgUrl: formState.imgUrl,
         }
-
         reviewService.createReview(data)
+        // <CreatedAlert />
         navigate('/movie-reviews')
     }
 
@@ -95,7 +96,7 @@ function CreateReview() {
         <section className='section-container'>
             <div className="content-container">
                 <h1 className='heading'>Write your own review</h1>
-
+                {/* <CreatedAlert/> */}
                 <Form onSubmit={onCreateHandler}>
                     <Form.Group className="mb-3">
                         <Form.Label htmlFor="title">* Title: </Form.Label>
