@@ -35,7 +35,7 @@ function ReviewDetails() {
                     </div>
                 </div>
 
-                <Comments/>
+                {/* <Comments/> */}
             </div>
         </section>
     )
