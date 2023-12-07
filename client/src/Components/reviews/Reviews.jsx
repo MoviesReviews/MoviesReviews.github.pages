@@ -8,7 +8,7 @@ function Reviews() {
 
     useEffect(() => {
         reviewService.getAll().then(setReviews)
-    }, [reviews])
+    }, [])
 
     console.log(reviews)
 

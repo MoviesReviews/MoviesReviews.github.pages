@@ -12,7 +12,7 @@ export const register = async (email, password, username, category) => {
         })
         return data
     } catch (err) {
-        console.log(err.msg)
+        console.log(err)
     }
 }
 
@@ -24,7 +24,7 @@ export const login = async (email, password) => {
         })
         return data
     } catch (err) {
-        console.log(err.msg)
+        console.log(err)
     }
 }
 

@@ -1,27 +1,27 @@
-async function request(method, url, body){
-    let options = {method, headers: {}}
+async function request(method, url, body) {
+    let options = { method, headers: {} }
     const token = localStorage.getItem('token')
 
-    if(body){
+    if (body) {
         options.headers['content-type'] = 'application/json'
         options.body = JSON.stringify(body)
     }
 
-    if(token){
+    if (token) {
         options.headers['X-Authorization'] = token
     }
 
     try {
         const response = await fetch(url, options)
-        if(!response.ok){
+        if (!response.ok) {
             throw new Error(response.error)
         }
-        if(response.status == 204){
+        if (response.status == 204) {
             return []
         }
         return await response.json()
     } catch (error) {
-        console.log(error.message)
+        console.log(error)
     }
 }
 
