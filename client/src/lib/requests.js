@@ -1,14 +1,14 @@
 async function request(method, url, body){
-    let options = {method}
+    let options = {method, headers: {}}
+    const token = localStorage.getItem('token')
 
     if(body){
-        options = {
-            method,
-            headers : {
-                'content-type' : 'application/json'
-            },
-            body : JSON.stringify(body)
-        }
+        options.headers['content-type'] = 'application/json'
+        options.body = JSON.stringify(body)
+    }
+
+    if(token){
+        options.headers['X-Authorization'] = token
     }
 
     try {

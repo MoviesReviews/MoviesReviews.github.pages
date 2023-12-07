@@ -20,7 +20,7 @@ function CreateReview() {
         comedy: false,
         other: false,
     }
-    const [formState, setFormState] = useState(formInitialState) //NO ZASHTO???
+    const [formState, setFormState] = useState(formInitialState) 
     const [errors, setErrors] = useState({})
     const titleRef = useRef()
     const submitBtn = useRef()
@@ -69,7 +69,6 @@ function CreateReview() {
 
     const titleValidateHandler = (e) => {
         if (e.target.value.length < 2) {
-            console.log('??');
             setErrors(s => ({ ...s, title: 'Title must be at least 2 characters long' }))
         } else {
             setErrors(s => ({ ...s, title: '' }))

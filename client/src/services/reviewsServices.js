@@ -1,9 +1,9 @@
 import * as request from '../lib/requests'
-const baseUrl = 'http://localhost:3030/jsonstore/reviews'
+const baseUrl = 'http://localhost:3030/data/reviews'
 
 export const getAll = async () => {
     const result = await request.get(baseUrl)
-    return Object.values(result)
+    return result
 }
 
 export const getOne = async (id) => {
