@@ -1,0 +1,9 @@
+.comment-container{
+    background-color: rgb(123, 108, 2013, 25%);
+    /* max-width: 30%; */
+    border-radius: 5%;
+    border-color: rgb(123, 108, 2013, 2%);
+    color: black;
+    padding: 0 10px;
+    margin-bottom: 1em;
+}

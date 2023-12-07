@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 function Card({review}){
     const categoryNew = review.category
-    console.log(categoryNew.join(', '))
 
     return(
         <div className={styles['card-container']}>

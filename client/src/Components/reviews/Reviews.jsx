@@ -10,8 +10,6 @@ function Reviews() {
         reviewService.getAll().then(setReviews)
     }, [])
 
-    console.log(reviews)
-
     return (
         <div className={styles.background}>
             <section className={styles.section}>

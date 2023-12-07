@@ -33,12 +33,12 @@ function ReviewDetails() {
                         <label htmlFor="category">Category:</label>
                         <p id="category">{categoryFormatted?.join(', ')}</p>
                     </div>
+                <Comments reviewId={id}/>
                 </div>
-
-                {/* <Comments/> */}
             </div>
         </section>
     )
 }
 
 export default ReviewDetails
+
