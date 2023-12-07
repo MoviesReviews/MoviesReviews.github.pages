@@ -1,0 +1,6 @@
+.categories{
+    display: flex;
+    /* justify-content: space-around; */
+    gap: 2.5em;
+    padding-top: 0.5em;
+}

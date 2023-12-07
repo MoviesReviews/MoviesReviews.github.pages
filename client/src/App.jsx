@@ -13,6 +13,7 @@ import NotFound from './Components/notFound/NotFound'
 import * as userService from './services/userService'
 import { useState } from 'react'
 import { AuthContext } from './contexts/authContext'
+import { Logout } from './Components/logout/Logout'
 
 
 function App() {
@@ -39,6 +40,13 @@ function App() {
     navigate('/')
   }
 
+  const logoutHandler = async() => {
+    await userService.logout()
+    setAuthState({})
+    localStorage.removeItem('token')
+    navigate('/')
+  }
+
   const authContext = {
     email: authState.email,
     username: authState.username,
@@ -61,6 +69,7 @@ function App() {
             <Route path='/users' element={<AllUsers />} />
             <Route path='/login' element={<Login loginHandler={loginHandler} />} />
             <Route path='/register' element={<Register registerHandler={registerHandler} />} />
+            <Route path='/logout' element={<Logout logoutHandler={logoutHandler} />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
 

@@ -1,0 +1,17 @@
+.welcomeMsg{
+    font-size: 3em;
+    color: rgba(254, 134, 212, 100%);
+    padding-bottom: 2em;
+}
+
+.welcome-container{
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+}
+
+.username{
+    color: aliceblue;
+    font-size: 2em;
+    font-weight: 200;
+}

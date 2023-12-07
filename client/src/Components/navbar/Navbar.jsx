@@ -4,11 +4,11 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import styles from './Navbar.module.css'
 import { Link } from 'react-router-dom';
-import { useContext } from 'react';
 import { AuthContext } from '../../contexts/authContext';
+import { useContext } from 'react';
 
 function NavbarMenu() {
-    const authContext = useContext(AuthContext)
+  const authContext = useContext(AuthContext)
 
     return (
         <Navbar collapseOnSelect expand="lg" className={`bg - body - tertiary' ${styles['navbar-container']}`}  >
@@ -23,7 +23,6 @@ function NavbarMenu() {
                                 <NavDropdown.Item as={Link} to='/users' className={styles.link}>Users</NavDropdown.Item>
                                 <NavDropdown.Divider />
                             </NavDropdown>
-                        <h1 className={styles.helloMsg}>Hello, {authContext.username}</h1>
                         </Nav>
                     </div>
 
@@ -50,17 +49,3 @@ function NavbarMenu() {
 }
 
 export default NavbarMenu
-
-{/* <div className="inside-container top-bar">
-<div className="row">
-    <div className="col-md-4 top-bar-left order-2 order-md-12">
-        <a href="mailto:info@webdomus.net">Menu</a>
-    </div>
-    <div className="col-md-4 logo order-1 order-md-12 ownLogo">
-        Movie Reviews
-    </div>
-    <div className="col-md-4 top-bar-right order-3 order-md-12">
-        <a href="tel:+39.0874.484661">Login</a>
-    </div>
-</div>
-</div> */}
