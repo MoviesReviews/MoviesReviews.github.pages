@@ -10,7 +10,7 @@ export function CommentsCard({comment, owner, commentId, commentDeleted}){
     return(
         <div className={styles['comment-container']}>
             <p>{typeof owner == 'string' ? owner : owner.username}: {comment}</p>
-            <button onClick={deleteHandler}>X</button>
+            <button onClick={deleteHandler} className={styles.deleteBtn}>Delete</button>
         </div>
     )
 }

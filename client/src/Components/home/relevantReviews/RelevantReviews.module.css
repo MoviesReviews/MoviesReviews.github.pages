@@ -2,5 +2,18 @@
     display: flex;
     flex-direction: column;
     gap: 2em;
-    padding: 8em;
+    padding-top: 8em;
+    padding-bottom: 10em;
+    padding-right: 2em;
+    font-weight: 500;
+}
+
+.link{
+    border-top: 1px solid black
+}
+
+.link:hover{
+    text-decoration: none;
+    color: rgb(230, 29, 170);
+    font-weight: 800;
 }

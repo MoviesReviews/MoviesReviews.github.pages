@@ -21,8 +21,8 @@ function RelevantReviews() {
               <h2 className="club-section-title">
                 The newest review
               </h2>
-              <Link to={`movie-reviews/${latest._id}/details`}>
-                <p>Movie : {latest.title}</p>
+              <Link to={`movie-reviews/${latest._id}/details`} className={styles.link}>
+                <p >Movie : {latest.title}</p>
               </Link>
               <p>
                 {latest.description}
