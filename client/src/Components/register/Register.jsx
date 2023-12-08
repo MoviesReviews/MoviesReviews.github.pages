@@ -4,9 +4,12 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useForm } from '../../hooks/useForm';
 import styles from './Register.module.css'
+import { useContext } from 'react';
+import { AuthContext } from '../../contexts/authContext';
 
 
-function Register({ registerHandler }) {
+function Register() {
+    const { registerHandler } = useContext(AuthContext)
     const { formValues, onChange, onSubmit } = useForm(registerHandler, {
         username: '',
         email: '',

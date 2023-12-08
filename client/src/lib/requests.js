@@ -11,18 +11,20 @@ async function request(method, url, body) {
         options.headers['X-Authorization'] = token
     }
 
-    try {
-        const response = await fetch(url, options)
-        if (!response.ok) {
-            throw new Error(response.error)
-        }
-        if (response.status == 204) {
-            return []
-        }
-        return await response.json()
-    } catch (error) {
-        throw new Error(error)
+    const response = await fetch(url, options)
+
+    if (response.status == 204) {
+        return []
     }
+
+    const result = await response.json()
+    //zashtoto dori i da ima greshka tr da se await-ne za da se vidi sudurjanieto
+
+    if (response.ok == false) {
+        throw new Error(result.message)
+    }
+
+    return result
 }
 
 export const get = request.bind(null, 'GET')
