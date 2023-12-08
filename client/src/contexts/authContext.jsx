@@ -1,15 +1,14 @@
-import { createContext } from "react"
+import { createContext, useState } from "react"
 import * as userService from '../services/userService'
 import { useNavigate } from "react-router-dom"
 import usePersistedState from "../hooks/usePersistedState"
-
 export const AuthContext = createContext()
 
-// const [errors, setErrors] = useState({})
 
 export default function AuthProvider({ children }) {
     const [authState, setAuthState] = usePersistedState('auth', {})
     const navigate = useNavigate()
+    const [errors, setErrors] = useState({})
 
     const registerHandler = async (registerState) => {
         const category = Object.entries(registerState).filter(x => x[1] == true).map(x => x[0]).join(', ')
@@ -20,7 +19,7 @@ export default function AuthProvider({ children }) {
             navigate('/')
 
         } catch (error) {
-            navigate('/')
+            setErrors({serverError: error.message})
         }
 
     }
@@ -32,7 +31,7 @@ export default function AuthProvider({ children }) {
             localStorage.setItem('token', data.accessToken)
             navigate('/')
         } catch (error) {
-            navigate('/login')
+           setErrors({serverError: error.message})
         }
     }
 
@@ -49,7 +48,8 @@ export default function AuthProvider({ children }) {
         username: authState.username,
         token: authState.accessToken,
         _id: authState._id,
-        isAuthenticated: !!authState.email
+        isAuthenticated: !!authState.email,
+        errors
     }
     return (
         <AuthContext.Provider value={authContext}>

@@ -4,3 +4,8 @@
     gap: 2.5em;
     padding-top: 0.5em;
 }
+
+.errMsg{
+    color: Red;
+    margin-bottom: 2em;
+}

@@ -4,12 +4,12 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useForm } from '../../hooks/useForm';
 import styles from './Register.module.css'
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { AuthContext } from '../../contexts/authContext';
 
-
 function Register() {
-    const { registerHandler } = useContext(AuthContext)
+    const { registerHandler, errors } = useContext(AuthContext)
+    const [ inputErrors, setInputErrors ] = useState({})
     const { formValues, onChange, onSubmit } = useForm(registerHandler, {
         username: '',
         email: '',
@@ -24,6 +24,38 @@ function Register() {
         other: false,
     })
 
+    const usuernameValidator = (e) => {
+        if (e.target.value.length < 3) {
+            setInputErrors(s => ({ ...s, username: 'Username must be at least 3 characters long' }))
+        } else {
+            setInputErrors(s => ({ ...s, username: '' }))
+        }
+    }
+
+    const confirmPasswordValidator = () => {
+        if(formValues.password !== formValues.rePass){
+            setInputErrors(s => ({...s, rePass: 'Passwords should match'}))
+        } else{
+            setInputErrors(s => ({...s, rePass: ''}))
+        }
+    }
+
+    const passwordValidator = (e) => {
+        if (e.target.value.length < 6) {
+            setInputErrors(s => ({ ...s, password: 'Password must be at least 6 characters long' }))
+        } else {
+            setInputErrors(s => ({ ...s, password: '' }))
+        }
+    }
+
+    const emailValidator = (e) => {
+        if (e.target.value.length == '') {
+            setInputErrors(s => ({ ...s, email: 'Email must be valid' }))
+        } else {
+            setInputErrors(s => ({ ...s, email: '' }))
+        }
+    }
+
     return (
         <section className='section-container'>
             <div className="content-container">
@@ -35,7 +67,8 @@ function Register() {
                             Username
                         </Form.Label>
                         <Col sm={10}>
-                            <Form.Control type="username" placeholder="Username" name='username' id='username' value={formValues.username} onChange={onChange} />
+                            <Form.Control type="username" placeholder="Username" name='username' id='username' value={formValues.username} onChange={onChange} onBlur={usuernameValidator} className={inputErrors.username && 'errorInput'} />
+                            {inputErrors.username && <p className='errorMsg'>{inputErrors.username}</p>}
                         </Col>
                     </Form.Group>
 
@@ -44,7 +77,8 @@ function Register() {
                             Email
                         </Form.Label>
                         <Col sm={10}>
-                            <Form.Control type="email" placeholder="Email" name='email' id='email' value={formValues.email} onChange={onChange} />
+                            <Form.Control type="email" placeholder="Email" name='email' id='email' value={formValues.email} onChange={onChange} className={errors.serverError || inputErrors.email && 'errorInput'} onBlur={emailValidator}/>
+                            {inputErrors?.email && <p className='errorMsg'>{inputErrors?.email}</p>}
                         </Col>
                     </Form.Group>
 
@@ -53,7 +87,8 @@ function Register() {
                             Password
                         </Form.Label>
                         <Col sm={10}>
-                            <Form.Control type="password" placeholder="Password" name='password' id='password' value={formValues.password} onChange={onChange} />
+                            <Form.Control type="password" placeholder="Password" name='password' id='password' value={formValues.password} onChange={onChange} onBlur={passwordValidator} className={inputErrors.password && 'errorInput'}/>
+                            {inputErrors?.password && <p className='errorMsg'>{inputErrors?.password}</p>}
                         </Col>
                     </Form.Group>
 
@@ -62,7 +97,8 @@ function Register() {
                             Confirm Password
                         </Form.Label>
                         <Col sm={10}>
-                            <Form.Control type="password" placeholder="Confirm Password" name='rePass' id='rePass' value={formValues.rePass} onChange={onChange} />
+                            <Form.Control type="password" placeholder="Confirm Password" name='rePass' id='rePass' value={formValues.rePass} onChange={onChange} onBlur={confirmPasswordValidator} className={inputErrors.rePass && 'errorInput'}/>
+                            {inputErrors?.rePass && <p className='errorMsg'>{inputErrors?.rePass}</p>}
                         </Col>
                     </Form.Group>
 
@@ -127,6 +163,8 @@ function Register() {
                             />
                         </div>
                     </Form.Group>
+
+                    {errors.serverError && <p className={styles.errMsg}>Error: {errors.serverError}</p>}
 
                     <Form.Group as={Row} className="mb-3">
                         <Col sm={{ span: 10, offset: 2 }}>

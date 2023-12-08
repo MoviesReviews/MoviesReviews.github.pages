@@ -1,2 +1,6 @@
-.heading{
+.msg{
+    margin-bottom: 1em;
+    font-weight: 500;
+    color: red;
+    margin-top: 2em;
 }

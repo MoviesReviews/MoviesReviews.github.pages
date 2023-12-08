@@ -6,7 +6,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../../contexts/authContext';
 
 function Login() {
-    const { loginHandler } = useContext(AuthContext)
+    const { loginHandler, errors } = useContext(AuthContext)
     const { formValues, onSubmit, onChange } = useForm(loginHandler, {
         email: '',
         password: ''
@@ -30,6 +30,7 @@ function Login() {
                         <Form.Control type="password" placeholder="Password" name='password' id='password' value={formValues.password} onChange={onChange} />
                     </Form.Group>
 
+                    {errors.serverError && <p className={styles.msg}>Error: {errors.serverError}</p>}
                     <Button variant="primary" type="submit">
                         Submit
                     </Button>
