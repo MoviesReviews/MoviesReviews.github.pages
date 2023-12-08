@@ -12,6 +12,7 @@ import ReviewDetails from './Components/detailsReview/ReviewDetails'
 import NotFound from './Components/notFound/NotFound'
 import AuthProvider from './contexts/authContext'
 import { Logout } from './Components/logout/Logout'
+import EditReview from './Components/editReview/editReview'
 
 
 function App() {
@@ -26,6 +27,8 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/movie-reviews' element={<Reviews />} />
             <Route path='/movie-reviews/:id/details' element={<ReviewDetails />} />
+            <Route path='/movie-reviews/:id/edit' element={<EditReview />} />
+            {/* <Route path='/movie-reviews/:id/delete' element={<ReviewDetails />} /> */}
             <Route path='/create-review' element={<CreateReview />} />
             <Route path='/users' element={<AllUsers />} />
             <Route path='/login' element={<Login />} />

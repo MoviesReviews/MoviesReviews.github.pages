@@ -32,12 +32,16 @@ export default function Comments({ reviewId }) {
         comment: ''
     })
 
+    const commentDeleted = (commentId) => {
+        setComments(s => s.filter(c => c._id !== commentId))
+    }
+
     return (
         <div className={styles.comments}>
             <div className={styles['comments-container']}>
                 <h2>Comments: </h2>
-                {comments.map(c => <CommentsCard key={c._id} comment={c.comment} owner={c.owner} />)}
-                {comments.length ==0 && <p>No comments yet.</p>}
+                {comments.map(c => <CommentsCard key={c._id} comment={c.comment} owner={c.owner} commentId={c._id} commentDeleted={commentDeleted} />)}
+                {comments.length == 0 && <p>No comments yet.</p>}
             </div>
 
             {authContext.isAuthenticated &&

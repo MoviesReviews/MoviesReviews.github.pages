@@ -21,3 +21,7 @@ export const getCommentsByReview = async (reviewId) => {
     const result = await request.get(`${baseUrl}?${query}`)
     return result
 }
+
+export const deleteComment = async (commentId) => {
+    return await request.del(`${baseUrl}/${commentId}`)
+}

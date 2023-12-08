@@ -11,7 +11,7 @@ function CreateReview() {
         title: '',
         description: '',
         category: '',
-        imgUrl: '',
+        img: '',
         horror: false,
         thriller: false,
         romance: false,
@@ -60,7 +60,7 @@ function CreateReview() {
             title: formState.title,
             description: formState.description,
             category,
-            imgUrl: formState.imgUrl,
+            img: formState.img,
         }
         reviewService.createReview(data)
         // <CreatedAlert />
@@ -85,9 +85,9 @@ function CreateReview() {
     
     const imgValidatator = (e) => {
         if (!e.target.value.startsWith('http://')) {
-            setErrors(s => ({ ...s, imgUrl: 'Image must start with http://' }))
+            setErrors(s => ({ ...s, img: 'Image must start with http://' }))
         } else {
-            setErrors(s => ({ ...s, imgUrl: '' }))
+            setErrors(s => ({ ...s, img: '' }))
         }
     }
 
@@ -109,9 +109,9 @@ function CreateReview() {
                     </Form.Group>
 
                     <Form.Group className={`mb-3 ${styles['description-container']}`}>
-                        <Form.Label htmlFor="imgUrl">* Image: </Form.Label>
-                        <input value={formState.imgUrl} onChange={changeHandler} className={errors.imgUrl && styles.errorInput} onBlur={imgValidatator} name='imgUrl' id='imgUrl' placeholder='http://..' />
-                        {errors.imgUrl && <p className={styles.errorMsg}>{errors.imgUrl}</p>}
+                        <Form.Label htmlFor="img">* Image: </Form.Label>
+                        <input value={formState.img} onChange={changeHandler} className={errors.img && styles.errorInput} onBlur={imgValidatator} name='img' id='img' placeholder='http://..' />
+                        {errors.img && <p className={styles.errorMsg}>{errors.img}</p>}
                     </Form.Group>
 
                     <Form.Group className={`mb-3 ${styles['checkbox-container']}`}>

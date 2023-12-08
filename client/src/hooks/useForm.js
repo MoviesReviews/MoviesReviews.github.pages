@@ -21,6 +21,7 @@ export const useForm = (submitHandler, initialState) => {
     const onSubmit = (e) => {
         e.preventDefault()
         submitHandler(formValues)
+        setFormValues(initialState)
     }
 
     return{

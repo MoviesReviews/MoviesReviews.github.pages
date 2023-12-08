@@ -26,3 +26,11 @@ export const getLatest = async () => {
     const data = await request.get(`${baseUrl}?sortBy=_createdOn%20desc`)
     return data
 }
+
+export const editReview = async (data, reviewId) => {
+    return await request.put(`${baseUrl}/${reviewId}`, data)
+}
+
+export const deleteReview = async (reviewId) => {
+    return await request.del(`${baseUrl}/${reviewId}`)
+}
