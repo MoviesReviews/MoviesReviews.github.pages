@@ -1,6 +1,8 @@
 .img{
     max-width: 16em;
     max-height: 26em;
+    border-radius: 2%;
+    border: 2px solid black;
 }
 
 .main-container{

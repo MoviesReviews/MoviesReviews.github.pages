@@ -22,7 +22,7 @@ function Banner() {
               Read some great movie reviews and comment on each one!
             </h1>
             <p className="site-title-desc">
-              Great place for making friends anf having fun while commenting movies you love.
+              Great place for making friends and having fun while commenting movies you love.
             </p>
             {!authContext.isAuthenticated &&
               <Link to='/register' className='banner-btn'>Join us now</Link>

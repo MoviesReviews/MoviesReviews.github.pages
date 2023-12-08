@@ -20,7 +20,7 @@ function NavbarMenu() {
                         <Nav className="me-auto">
                             <NavDropdown title="Menu" id="collasible-nav-dropdown" className={styles.main}>
                                 <NavDropdown.Item as={Link} to='/movie-reviews' className={styles.link}>Reviews</NavDropdown.Item>
-                                <NavDropdown.Item as={Link} to='/users' className={styles.link}>Users</NavDropdown.Item>
+                                {/* <NavDropdown.Item as={Link} to='/users' className={styles.link}>Users</NavDropdown.Item> */}
                                 <NavDropdown.Divider />
                             </NavDropdown>
                         </Nav>

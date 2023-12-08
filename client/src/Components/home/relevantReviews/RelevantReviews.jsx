@@ -12,10 +12,10 @@ function RelevantReviews() {
 
 
   return (
-    <div className="best-class-club">
+    <div className={`best-class-club ${styles.wrapper}`}>
       <div className="row best-class-sections-detail">
         <div className='col-lg-6 best-class-club-desc'>
-          <div className="row">
+          <div className={`row ${styles.container}`}>
             <div className="col-lg-4"></div>
             <div className={`col-lg-8 detail-col-club ${styles['info-container']}`}>
               <h2 className="club-section-title">
