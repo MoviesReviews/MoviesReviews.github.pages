@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import * as  reviewsService from "../../../services/reviewsServices"
 import { Link } from 'react-router-dom';
+import styles from './Movies.module.css'
 
 function Movies() {
     const [latest, setLatest] = useState([])
@@ -17,9 +18,9 @@ function Movies() {
                     <h2 className="section-title">Choose movie you like</h2>
                 </div>
             </div>
-            <div className="row service-detail">
+            <div className={`row service-detail`}>
                 {latest?.map(r => (
-                    <div className="col-lg-4" key={r._id}>
+                    <div className={`col-lg-4`} key={r._id}>
                         <svg
                             version="1.1"
                             className="service-detail-img"
