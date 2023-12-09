@@ -166,7 +166,7 @@ function Register() {
                     </Form.Group>
 
                     {errors.serverError && <p className={styles.errMsg}>Error: {errors.serverError}</p>}
-                    <p className={styles.loginMsg}>Already have an account? <Link className={styles.login}>Login</Link></p>
+                    <p className={styles.loginMsg}>Already have an account? <Link to='/login' className={styles.login}>Login</Link></p>
 
                     <Form.Group as={Row} className="mb-3">
                         <Col sm={{ span: 10, offset: 2 }}>
