@@ -28,9 +28,8 @@ function App() {
             <Route path='/movie-reviews' element={<Reviews />} />
             <Route path='/movie-reviews/:id/details' element={<ReviewDetails />} />
             <Route path='/movie-reviews/:id/edit' element={<EditReview />} />
-            {/* <Route path='/movie-reviews/:id/delete' element={<ReviewDetails />} /> */}
             <Route path='/create-review' element={<CreateReview />} />
-            <Route path='/users' element={<AllUsers />} />
+            {/* <Route path='/users' element={<AllUsers />} /> */}
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/logout' element={<Logout />} />

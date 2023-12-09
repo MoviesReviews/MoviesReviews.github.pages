@@ -2,8 +2,8 @@ import { createContext, useState } from "react"
 import * as userService from '../services/userService'
 import { useNavigate } from "react-router-dom"
 import usePersistedState from "../hooks/usePersistedState"
-export const AuthContext = createContext()
 
+export const AuthContext = createContext()
 
 export default function AuthProvider({ children }) {
     const [authState, setAuthState] = usePersistedState('auth', {})

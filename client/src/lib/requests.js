@@ -18,7 +18,6 @@ async function request(method, url, body) {
     }
 
     const result = await response.json()
-    //zashtoto dori i da ima greshka tr da se await-ne za da se vidi sudurjanieto
 
     if (response.ok == false) {
         throw new Error(result.message)
