@@ -3,7 +3,6 @@ import Footer from './Components/footer/Foooter'
 import Home from './Components/home/Home'
 import Navbar from './Components/navbar/Navbar'
 import { Route, Routes } from 'react-router-dom'
-import AllUsers from './Components/users/Users'
 import './App.css'
 import Login from './Components/login/Login'
 import Register from './Components/register/Register'
@@ -29,7 +28,6 @@ function App() {
             <Route path='/movie-reviews/:id/details' element={<ReviewDetails />} />
             <Route path='/movie-reviews/:id/edit' element={<EditReview />} />
             <Route path='/create-review' element={<CreateReview />} />
-            {/* <Route path='/users' element={<AllUsers />} /> */}
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/logout' element={<Logout />} />

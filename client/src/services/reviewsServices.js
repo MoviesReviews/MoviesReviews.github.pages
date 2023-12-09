@@ -10,7 +10,6 @@ export const getAll = async () => {
 export const getOne = async (id) => {
     const query = new URLSearchParams({
         load: `owner=_ownerId:users`
-        //suzai mi pole owner v koeto vurni infoto za tozi user, koito go e suzdal 
     })
 
     const result = await request.get(`${baseUrl}/${id}?${query}`)
