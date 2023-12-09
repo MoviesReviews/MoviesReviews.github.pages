@@ -9,3 +9,21 @@
     color: Red;
     margin-bottom: 2em;
 }
+
+.login{
+    padding: 0.1em 0.5em;
+    background-color: bisque;
+    border-radius: 10%;
+    margin-left: 1em;
+}
+
+.login:hover{
+    background-color: black;
+    color: white;
+    text-decoration: none;
+}
+
+.loginMsg{
+    margin: 2em 0.5em;
+    margin-left: 60em;
+}

@@ -6,6 +6,7 @@ import { useForm } from '../../hooks/useForm';
 import styles from './Register.module.css'
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../contexts/authContext';
+import { Link } from 'react-router-dom';
 
 function Register() {
     const { registerHandler, errors } = useContext(AuthContext)
@@ -165,6 +166,7 @@ function Register() {
                     </Form.Group>
 
                     {errors.serverError && <p className={styles.errMsg}>Error: {errors.serverError}</p>}
+                    <p className={styles.loginMsg}>Already have an account? <Link className={styles.login}>Login</Link></p>
 
                     <Form.Group as={Row} className="mb-3">
                         <Col sm={{ span: 10, offset: 2 }}>

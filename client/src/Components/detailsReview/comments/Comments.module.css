@@ -29,3 +29,16 @@
     border-color: black;
     color: white;
 }
+
+.register{
+    padding: 0.5em;
+    background-color: bisque;
+    border-radius: 10%;
+    margin-left: 1em;
+}
+
+.register:hover{
+    background-color: black;
+    color: white;
+    text-decoration: none;
+}

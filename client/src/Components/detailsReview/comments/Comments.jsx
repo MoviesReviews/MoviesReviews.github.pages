@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useForm } from "../../../hooks/useForm"
 import { createComment, getCommentsByReview } from "../../../services/commentServices"
 import { useContext, useEffect, useState } from "react"
@@ -20,10 +20,8 @@ export default function Comments({ reviewId }) {
 
             const newComment = await createComment(values.comment, reviewId)
             newComment.owner = authContext.username
-            //ruchno slagam pole owner zashtoto survura ne vrushta takova kato se suzdade komentar
             setComments(s => ([...s, newComment]))
         } catch (err) {
-            console.log(err.message)
             setErrors(s => ({ ...s, serverError: err.message }))
         }
     }
@@ -41,7 +39,7 @@ export default function Comments({ reviewId }) {
             <div className={styles['comments-container']}>
                 <h2>Comments: </h2>
                 {comments.map(c => <CommentsCard key={c._id} comment={c.comment} owner={c.owner} commentId={c._id} commentDeleted={commentDeleted} />)}
-                {comments.length == 0 && <p>No comments yet.</p>}
+                {comments.length == 0 && <p>No comments yet. Be the first one <Link to='/register' className={styles.register}>Register</Link></p>}
             </div>
 
             {authContext.isAuthenticated &&
