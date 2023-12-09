@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import * as  reviewsService from "../../../services/reviewsServices"
 import { Link } from 'react-router-dom';
-import styles from './Movies.module.css'
 
 function Movies() {
     const [latest, setLatest] = useState([])
