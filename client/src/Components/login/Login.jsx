@@ -30,7 +30,7 @@ function Login() {
                         <Form.Control type="password" placeholder="Password" name='password' id='password' value={formValues.password} onChange={onChange} />
                     </Form.Group>
 
-                    {errors.serverError && <p className={styles.msg}>Error: {errors.serverError}</p>}
+                    {errors.loginErrorMsg && <p className={styles.msg}>Error: {errors.loginErrorMsg}</p>}
                     <Button variant="primary" type="submit">
                         Submit
                     </Button>

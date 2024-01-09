@@ -16,10 +16,10 @@ export default function AuthProvider({ children }) {
             const data = await userService.register(registerState.email, registerState.password, registerState.username, category)
             setAuthState(data)
             localStorage.setItem('token', data.accessToken)
+            setErrors(errors => ({ ...errors, registerErrorMsg: undefined }))
             navigate('/')
-
         } catch (error) {
-            setErrors({serverError: error.message})
+            setErrors(errors => ({ ...errors, registerErrorMsg: error.message }))
         }
 
     }
@@ -29,9 +29,10 @@ export default function AuthProvider({ children }) {
             const data = await userService.login(loginState.email, loginState.password)
             setAuthState(data)
             localStorage.setItem('token', data.accessToken)
+            setErrors(errors => ({ ...errors, loginErrorMsg: undefined }))
             navigate('/')
         } catch (error) {
-           setErrors({serverError: error.message})
+            setErrors(errors => ({ ...errors, loginErrorMsg: error.message }))
         }
     }
 
