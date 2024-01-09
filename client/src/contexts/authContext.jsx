@@ -17,7 +17,7 @@ export default function AuthProvider({ children }) {
             setAuthState(data)
             localStorage.setItem('token', data.accessToken)
             setErrors(errors => ({ ...errors, registerErrorMsg: undefined }))
-            navigate('/')
+            navigate(-1)
         } catch (error) {
             setErrors(errors => ({ ...errors, registerErrorMsg: error.message }))
         }
@@ -30,7 +30,7 @@ export default function AuthProvider({ children }) {
             setAuthState(data)
             localStorage.setItem('token', data.accessToken)
             setErrors(errors => ({ ...errors, loginErrorMsg: undefined }))
-            navigate('/')
+            navigate(-1)
         } catch (error) {
             setErrors(errors => ({ ...errors, loginErrorMsg: error.message }))
         }

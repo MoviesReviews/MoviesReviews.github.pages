@@ -12,6 +12,10 @@ import NotFound from './Components/notFound/NotFound'
 import AuthProvider from './contexts/authContext'
 import { Logout } from './Components/logout/Logout'
 import EditReview from './Components/editReview/editReview'
+import AuthGuard from './guards/AuthGuard'
+import IsAuthorizedGuard from './guards/IsAuthorizedGuard'
+import NotAuthorized from './Components/unauthorized/NotAuthorized'
+import DeleteModal from './Components/detailsReview/modal/DeleteModal'
 
 
 function App() {
@@ -26,8 +30,14 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/movie-reviews' element={<Reviews />} />
             <Route path='/movie-reviews/:id/details' element={<ReviewDetails />} />
-            <Route path='/movie-reviews/:id/edit' element={<EditReview />} />
-            <Route path='/create-review' element={<CreateReview />} />
+            <Route element={<AuthGuard />}>
+              <Route path='/create-review' element={<CreateReview />} />
+              <Route path='/movie-reviews/:id/edit' element={<EditReview />} />
+            </Route>
+            <Route element={<IsAuthorizedGuard />}>
+            </Route>
+            {/* <Route path='/movie-reviews/:id/delete' element={<DeleteModal/>}/> */}
+            <Route path='/unauthorized' element={<NotAuthorized />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/logout' element={<Logout />} />

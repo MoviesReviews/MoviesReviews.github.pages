@@ -1,24 +1,26 @@
 .heading{
     font-size: 40px;
-    margin-bottom: 2em;
+    margin-bottom: 3em;
 }
 
 .container{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-block: 16em;
+    padding-block: 10em;
 }
 
 .link{
-    border: 1px solid black;
     padding: 2px;
+    border-bottom: 2px solid grey;
 }
 
 .link:hover{
     background-color: rgb(201, 167, 233);
-    font-style: none;
-    list-style: none;
+    text-decoration: none;
+    padding: 1em;
+    color: white;
+    border-radius: 2em;
 }
 
 .label{

@@ -4,3 +4,34 @@
     color: red;
     margin-top: 2em;
 }
+
+/* .input{
+    width: 30%;
+} */
+
+.form{
+    margin: 0 auto;
+}
+
+.container{
+    /* padding: 2em 0 */
+    max-width: 50%;
+    margin: 0 auto;
+}
+
+.registerMsg{
+    margin-bottom: 2em;
+}
+
+.register{
+    padding: 0.1em 0.5em;
+    background-color: bisque;
+    border-radius: 10%;
+    margin-left: 1em;
+}
+
+.register:hover{
+    background-color: black;
+    color: white;
+    text-decoration: none;
+}

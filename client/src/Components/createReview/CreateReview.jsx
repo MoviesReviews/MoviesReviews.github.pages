@@ -94,9 +94,9 @@ function CreateReview() {
     return (
         <section className='section-container'>
             <div className="content-container">
-                <h1 className='heading'>Write your own review</h1>
                 {/* <CreatedAlert/> */}
-                <Form onSubmit={onCreateHandler}>
+                <Form onSubmit={onCreateHandler} className={styles.createForm}>
+                <h1 className='heading'>Write your own review</h1>
                     <Form.Group className="mb-3">
                         <Form.Label htmlFor="title">* Title: </Form.Label>
                         <Form.Control className={errors.title && styles.errorInput} value={formState.title} onChange={changeHandler} ref={titleRef} onBlur={titleValidateHandler} name='title' id="title" placeholder="Write appropriate title.." />

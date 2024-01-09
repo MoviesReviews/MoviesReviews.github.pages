@@ -60,9 +60,9 @@ function Register() {
     return (
         <section className='section-container'>
             <div className="content-container">
-                <h1 className='heading'>Register</h1>
 
                 <Form onSubmit={onSubmit}>
+                <h1 className='heading'>Register</h1>
                     <Form.Group as={Row} className="mb-3">
                         <Form.Label column sm={2}>
                             Username

@@ -8,7 +8,8 @@ div .content-container{
     background-color: rgba(254, 134, 212, 50%);
     padding: 3em 5em;
     border-radius: 2em;
-    border-style:groove;
+    display: flex;
+    margin-top: 8em;
 }
 
 .button{
@@ -25,7 +26,7 @@ div .content-container{
 
 .heading{
     font-size: 32px;
-    margin-bottom: 2em;
+    margin-bottom: 1.5em;
 }
 
 .errorInput{
@@ -36,3 +37,5 @@ div .content-container{
     color: red;
     font-size: 12px;
 }
+
+
