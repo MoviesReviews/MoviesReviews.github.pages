@@ -1,17 +1,18 @@
 import { useContext, useEffect, useState } from "react"
 import * as reviewsSwervice from '../../services/reviewsServices'
-import { useParams } from "react-router-dom"
+import {  useParams } from "react-router-dom"
 import styles from './ReviewDetails.module.css'
 import Comments from "./comments/Comments"
 import { AuthContext } from "../../contexts/authContext"
 import { Link } from 'react-router-dom';
 import DeleteModal from "./modal/DeleteModal"
 
+
 function ReviewDetails() {
     const [review, setReview] = useState({})
     const { id } = useParams()
     const { _id } = useContext(AuthContext)
-    const [showDelete, setShowDelete] = useState(true)
+
 
     useEffect(() => {
         reviewsSwervice.getOne(id).then(data => {
@@ -19,6 +20,8 @@ function ReviewDetails() {
         })
     }, [id])
     const categoryFormatted = review.category?.map(c => c.charAt(0).toUpperCase() + c.slice(1))
+
+
 
     return (
         <section className='section-container'>
@@ -35,10 +38,10 @@ function ReviewDetails() {
                             <Link to={`/movie-reviews/${id}/edit`}>
                                 <button className={`button ${styles.editBtn}`}>Edit Review</button>
                             </Link>
-                            <button className={`button ${styles.deleteBtn}`}>Delete</button>
-                            {/* <Link className={`button ${styles.deleteBtn}`} to={`/movie-reviews/${id}/delete`}>Delete</Link> */}
-                            {showDelete && <DeleteModal/>}
-                        </div> 
+                            {/* <button className={`button ${styles.deleteBtn}`} onClick={() => setShowDelete(true)}>Delete</button> */}
+                            {/* {showDelete && <DeleteModal deleteHandler={deleteHandler} />} */}
+                            <DeleteModal></DeleteModal>
+                        </div>
                     }
                 </div>
 
