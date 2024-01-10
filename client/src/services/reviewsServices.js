@@ -14,7 +14,6 @@ export const getOne = async (id) => {
 
     const result = await request.get(`${baseUrl}/${id}?${query}`)
     return result
-
 }
 
 export const createReview = async (data) => {
@@ -22,7 +21,8 @@ export const createReview = async (data) => {
 }
 
 export const getLatest = async () => {
-    const data = await request.get(`${baseUrl}?sortBy=_createdOn%20desc`)
+    const data = await request.get(`${baseUrl}?sortBy=_createdOn%20desc&pageSize=3`)
+    console.log(data);
     return data
 }
 
