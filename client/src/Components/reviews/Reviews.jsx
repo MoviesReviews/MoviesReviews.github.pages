@@ -1,10 +1,14 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import * as reviewService from '../../services/reviewsServices'
 import styles from './Reviews.module.css'
 import Card from "./card/Card"
+import CreatedAlert from "./createdReviewAlert/CreatedAlert"
+import { CreatedAlertContext } from "../../contexts/alertContext"
 
 function Reviews() {
     const [reviews, setReviews] = useState([])
+    const { createdReview } = useContext(CreatedAlertContext)
+    const [showCreatedAlert, setShowCreatedAlert] = useState(createdReview)
 
     useEffect(() => {
         reviewService.getAll().then(setReviews)
@@ -12,6 +16,8 @@ function Reviews() {
 
     return (
         <div className={styles.background}>
+            {showCreatedAlert && <CreatedAlert />}
+
             <section className={styles.section}>
                 <div className={styles["content-container"]}>
                     <h1 className={`heading ${styles.heading}`}>All Reviews</h1>

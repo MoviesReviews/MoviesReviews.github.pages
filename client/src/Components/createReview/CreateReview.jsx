@@ -1,10 +1,10 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import styles from './CreateReview.module.css'
-import { useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import * as reviewService from '../../services/reviewsServices'
 import { useNavigate } from 'react-router-dom'
-// import CreatedAlert from '../createReview/CreatedAlert';
+import { CreatedAlertContext } from '../../contexts/alertContext';
 
 function CreateReview() {
     const formInitialState = {
@@ -20,11 +20,12 @@ function CreateReview() {
         comedy: false,
         other: false,
     }
-    const [formState, setFormState] = useState(formInitialState) 
+    const [formState, setFormState] = useState(formInitialState)
     const [errors, setErrors] = useState({})
     const titleRef = useRef()
     const submitBtn = useRef()
     const navigate = useNavigate()
+    const { changeCreatedReviewState } = useContext(CreatedAlertContext)
 
     useEffect(() => {
         titleRef.current.focus()
@@ -63,7 +64,7 @@ function CreateReview() {
             img: formState.img,
         }
         reviewService.createReview(data)
-        // <CreatedAlert />
+        changeCreatedReviewState(true)
         navigate('/movie-reviews')
     }
 
@@ -74,7 +75,7 @@ function CreateReview() {
             setErrors(s => ({ ...s, title: '' }))
         }
     }
-    
+
     const descriptionValidator = (e) => {
         if (e.target.value.length < 10) {
             setErrors(s => ({ ...s, description: 'Descpription must be at least 10 characters long' }))
@@ -82,7 +83,7 @@ function CreateReview() {
             setErrors(s => ({ ...s, description: '' }))
         }
     }
-    
+
     const imgValidatator = (e) => {
         if (!e.target.value.startsWith('http://')) {
             setErrors(s => ({ ...s, img: 'Image must start with http://' }))
@@ -94,9 +95,8 @@ function CreateReview() {
     return (
         <section className='section-container'>
             <div className="content-container">
-                {/* <CreatedAlert/> */}
                 <Form onSubmit={onCreateHandler} className={styles.createForm}>
-                <h1 className='heading'>Write your own review</h1>
+                    <h1 className='heading'>Write your own review</h1>
                     <Form.Group className="mb-3">
                         <Form.Label htmlFor="title">* Title: </Form.Label>
                         <Form.Control className={errors.title && styles.errorInput} value={formState.title} onChange={changeHandler} ref={titleRef} onBlur={titleValidateHandler} name='title' id="title" placeholder="Write appropriate title.." />
