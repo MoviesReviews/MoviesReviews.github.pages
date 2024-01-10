@@ -39,7 +39,8 @@ export default function Comments({ reviewId }) {
             <div className={styles['comments-container']}>
                 <h2>Comments: </h2>
                 {comments.map(c => <CommentsCard key={c._id} comment={c.comment} owner={c.owner} commentId={c._id} commentDeleted={commentDeleted} />)}
-                {comments.length == 0 && <p>No comments yet. Be the first one <Link to='/register' className={styles.register}>Register</Link></p>}
+                {comments.length == 0 && <p>No comments yet. Be the first one </p>}
+                {!authContext.isAuthenticated && <p className={styles.authenticate}>If you want to write down a comment, please: <Link to='/login' className={styles.login}>Login</Link></p>}
             </div>
 
             {authContext.isAuthenticated &&

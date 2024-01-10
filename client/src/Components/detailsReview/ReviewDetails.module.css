@@ -1,8 +1,9 @@
 .img{
-    max-width: 16em;
-    max-height: 26em;
+    /* max-width: 16em;
+    max-height: 26em; */
+    max-width: 20em;
+    max-height: 30em;
     border-radius: 2%;
-    border: 2px solid black;
 }
 
 .main-container{
@@ -59,6 +60,17 @@ label{
 .editBtn:hover{
     list-style: none;
     text-decoration: none;
+    background-color: black;
+    border-color: black;
+    color: white;
+}
+
+.alert{
+    background-color: rgba(237, 20, 20, 0.707);
+    border-color: rgba(237, 20, 20, 0.707);
+}
+
+.alert:hover{
     background-color: black;
     border-color: black;
     color: white;

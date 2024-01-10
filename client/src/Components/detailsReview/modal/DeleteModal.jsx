@@ -20,14 +20,13 @@ function DeleteModal() {
 }
 
   return (
-
     <>
       <Button variant="primary" onClick={handleShow} className={styles.deleteBtn}>
         Delete
       </Button>
 
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
+      <Modal show={show} onHide={handleClose} >
+        <Modal.Header closeButton >
           <Modal.Title>Delete review</Modal.Title>
         </Modal.Header>
         <Modal.Body>Are you sure you want to delete this review?</Modal.Body>
@@ -35,7 +34,7 @@ function DeleteModal() {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={deleteHandler} >
+          <Button variant="primary" onClick={deleteHandler} className={styles.alert}>
             Delete
           </Button>
         </Modal.Footer>

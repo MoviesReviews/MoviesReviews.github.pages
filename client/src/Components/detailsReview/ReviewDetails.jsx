@@ -22,7 +22,6 @@ function ReviewDetails() {
     const categoryFormatted = review.category?.map(c => c.charAt(0).toUpperCase() + c.slice(1))
 
 
-
     return (
         <section className='section-container'>
             <div className={`content-container ${styles['main-container']}`}>
@@ -38,8 +37,6 @@ function ReviewDetails() {
                             <Link to={`/movie-reviews/${id}/edit`}>
                                 <button className={`button ${styles.editBtn}`}>Edit Review</button>
                             </Link>
-                            {/* <button className={`button ${styles.deleteBtn}`} onClick={() => setShowDelete(true)}>Delete</button> */}
-                            {/* {showDelete && <DeleteModal deleteHandler={deleteHandler} />} */}
                             <DeleteModal></DeleteModal>
                         </div>
                     }

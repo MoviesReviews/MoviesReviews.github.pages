@@ -30,15 +30,20 @@
     color: white;
 }
 
-.register{
+.login{
     padding: 0.5em;
     background-color: bisque;
     border-radius: 10%;
     margin-left: 1em;
 }
 
-.register:hover{
+.login:hover{
     background-color: black;
     color: white;
     text-decoration: none;
+}
+
+.authenticate{
+    margin-top: 2em;
+    font-size: smaller;
 }
