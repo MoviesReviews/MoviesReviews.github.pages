@@ -23,12 +23,7 @@
 .img{
     width: 10em;
     height: 10em;
-    /* display: block;
-    width: 100%;
-    height: auto; */
 }
-/* overflow: hidden; */
-/* aspect-ratio: 1/1; */
 
 .btn{
     padding: 0.5em 1em;

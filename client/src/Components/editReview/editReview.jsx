@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form';
 import { useEffect, useRef, useState } from 'react';
 import * as reviewService from '../../services/reviewsServices'
 import { useNavigate, useParams } from 'react-router-dom'
+import styles from '../editReview/EditReview.module.css'
 
 export default function EditReview() {
     const formInitialState = {
@@ -108,8 +109,8 @@ export default function EditReview() {
     }
 
     const imgValidatator = (e) => {
-        if (!e.target.value.startsWith('http://')) {
-            setErrors(s => ({ ...s, img: 'Image must start with http://' }))
+        if (!e.target.value.startsWith('http://') && !e.target.value.startsWith('https://')) {
+            setErrors(s => ({ ...s, img: 'Image must start with http:// or https://' }))
         } else {
             setErrors(s => ({ ...s, img: '' }))
         }
@@ -117,23 +118,23 @@ export default function EditReview() {
 
     return (
         <section className='section-container'>
-            <div className="content-container">
+            <div className={`content-container`}>
+                <Form onSubmit={onEditHandler} className={styles.form}>
                 <h1 className='heading'>Edit your review</h1>
-                <Form onSubmit={onEditHandler}>
                     <Form.Group className="mb-3">
                         <Form.Label htmlFor="title">* Title: </Form.Label>
-                        <Form.Control className={errors.title && 'errorInput'} value={formState.title} onChange={changeHandler} ref={titleRef} onBlur={titleValidateHandler} name='title' id="title" />
+                        <Form.Control className={`${errors.title && 'errorInput'} ${styles.input}`} value={formState.title} onChange={changeHandler} ref={titleRef} onBlur={titleValidateHandler} name='title' id="title" />
                         {errors.title && <p className='errorMsg'>{errors.title}</p>}
                     </Form.Group>
                     <Form.Group className={`mb-3`}>
                         <Form.Label htmlFor="description">* Description: </Form.Label>
-                        <textarea value={formState.description} onChange={changeHandler} onBlur={descriptionValidator} className={errors.description && 'errorInput'} name='description' id='description' />
+                        <textarea value={formState.description} onChange={changeHandler} onBlur={descriptionValidator} className={`${errors.description && 'errorInput'} ${styles.input}`} name='description' id='description' />
                         {errors.description && <p className='errorMsg'>{errors.description}</p>}
                     </Form.Group>
 
                     <Form.Group className={`mb-3`}>
                         <Form.Label htmlFor="img">* Image: </Form.Label>
-                        <input value={formState.img} onChange={changeHandler} className={errors.img && 'errorInput'} onBlur={imgValidatator} name='img' id='img' />
+                        <input value={formState.img} onChange={changeHandler} className={`${errors.img && 'errorInput'} ${styles.input}`} onBlur={imgValidatator} name='img' id='img' />
                         {errors.img && <p className='errorMsg'>{errors.img}</p>}
                     </Form.Group>
 
