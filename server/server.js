@@ -1339,6 +1339,26 @@
     	}
     };
     var seedData = {
+    	games: {
+    		"3564027f-adcd-4425-b2c0-1253d2386c0c": {
+    			title: "Test game",
+    			category: "Fantasy",
+    			maxLevel: "112",
+    			imageUrl: "https://cdn.akamai.steamstatic.com/steam/apps/552700/extras/MainCapsule_616x353.png?t=1673947787",
+    			summary: "Set in a world where fantasy creatures live side by side with humans.",
+    			_id: "3564027f-adcd-4425-b2c0-1253d2386c0c",
+    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8"
+    		},
+    		"c64db398-91cd-487c-b900-86058c0422f8": {
+    			title: "Action game",
+    			category: "Action",
+    			maxLevel: "40",
+    			imageUrl: "https://www.pcgamesn.com/wp-content/sites/pcgamesn/2022/01/action-adventure-games-tomb-raider.jpg",
+    			summary: "Summary here",
+    			_id: "c64db398-91cd-487c-b900-86058c0422f8",
+    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8"
+    		}
+    	},
     	reviews: {
     		"3987279d-0ad4-4afb-8ca9-5b256ae3b291": {
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
@@ -1361,6 +1381,17 @@
     				"Thriller"
     			],
     			_createdOn: 1613551344360
+    		},
+    		"8f414b4f-ab39-4d36-bedb-2ad69da9c833": {
+    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+    			title: "Openheimer",
+    			img: "https://m.media-amazon.com/images/M/MV5BZWI2YWU2ODItYzBmNi00Yjc2LWJlMDQtMGJlMmUxM2M3NzMxXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg",
+    			description: "The movie tells the story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb. It is a great movie with fascinating actors.",
+    			category: [
+    				"Drama",
+    				"History"
+    			],
+    			_createdOn: 1613551344361
     		}
     	},
     	recipes: {
@@ -1418,11 +1449,18 @@
     	},
     	comments: {
     		"0a272c58-b7ea-4e09-a000-7ec988248f66": {
-    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			content: "Great recipe!",
-    			recipeId: "8f414b4f-ab39-4d36-bedb-2ad69da9c830",
+    			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+    			comment: "Great review!",
+    			reviewId: "3987279d-0ad4-4afb-8ca9-5b256ae3b291",
     			_createdOn: 1614260681375,
     			_id: "0a272c58-b7ea-4e09-a000-7ec988248f66"
+    		},
+    		"0a272c58-b7ea-4e09-a000-7ec988248f67": {
+    			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+    			comment: "Sounds interesting!",
+    			reviewId: "8f414b4f-ab39-4d36-bedb-2ad69da9c833",
+    			_createdOn: 1614260681385,
+    			_id: "0a272c58-b7ea-4e09-a000-7ec988248f76"
     		}
     	},
     	records: {

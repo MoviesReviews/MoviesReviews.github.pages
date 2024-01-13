@@ -29,7 +29,7 @@ function ReviewDetails() {
                     <h1 className='heading'>Details about review: {review.title}</h1>
                     <label htmlFor="author">Wrote: {review.owner?.username}</label>
                     <p id="author">{ }</p>
-                    <p>
+                    <p className={styles.imgContainer}>
                         <img className={`img ${styles.img}`} src={review.img} alt="image" />
                     </p>
                     {review._ownerId == _id &&

@@ -1,24 +1,27 @@
-.img{
-    /* max-width: 16em;
-    max-height: 26em; */
-    max-width: 20em;
-    max-height: 30em;
-    border-radius: 2%;
+.imgContainer{
+    overflow: hidden;
+    padding: 2em;
 }
 
-.main-container{
+.img{
+    border-radius: 5%;
+    width: 20em;
+    height: 20em;
+}
+
+.main-container {
     display: flex;
     justify-content: space-between;
 }
 
-.details-container-left{
+.details-container-left {
     display: flex;
     flex-direction: column;
     gap: 2em;
     flex-basis: 40%;
 }
 
-.details-container-right{
+.details-container-right {
     padding-top: 5em;
     display: flex;
     flex-direction: column;
@@ -26,38 +29,39 @@
     flex-basis: 50%;
 }
 
-label{
+label {
     font-size: 16px;
     font-weight: bold;
 }
 
-.descrption{
+.descrption {
     padding: 1.5em;
     border: 1px solid black;
 }
 
-.category{
+.category {
     display: flex;
     gap: 1em;
 }
 
-.btn-container{
+.btn-container {
     margin-top: 11em;
 }
 
-.editBtn{
+.editBtn {
     background-color: rgba(252, 252, 3, 0.775);
-    border-color: rgba(252, 252, 3, 0.775);;
+    border-color: rgba(252, 252, 3, 0.775);
+    ;
     margin-right: 1em;
 }
 
-.deleteBtn{
+.deleteBtn {
     background-color: red;
     border-color: red;
 }
 
 .deleteBtn:hover,
-.editBtn:hover{
+.editBtn:hover {
     list-style: none;
     text-decoration: none;
     background-color: black;
@@ -65,12 +69,12 @@ label{
     color: white;
 }
 
-.alert{
+.alert {
     background-color: rgba(237, 20, 20, 0.707);
     border-color: rgba(237, 20, 20, 0.707);
 }
 
-.alert:hover{
+.alert:hover {
     background-color: black;
     border-color: black;
     color: white;
