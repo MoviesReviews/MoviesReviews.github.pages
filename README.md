@@ -11,8 +11,14 @@
 	<li>Firebase- Hosting and Functions</li>
 </ul>
 <div>🧑‍💻 Functionality
-<p>Guest users can see different reviews about movies they like and also read comments about them.
-    Logged users extend functionality with option to create/edit/delete reviews, and add/delete comments.</p> 
+	<ul> Guest users: 
+		<li>Guest users can see different reviews about movies they like</li>
+		<li>Read comments about different reviews</li>
+	</ul>
+	<ul> Logged in users:
+		<li>Logged users have extended functionalities with option to create/edit/delete reviews</li>
+		<li>Logged users have extended functionalities with option to create/delete comments</li>
+	</ul>
 </div>
 
 ⚙️ Application Configurations
@@ -24,7 +30,7 @@
 <div> 👀 Screenshots: 
 <p>HOME PAGE</p>
 <img src="/client/public/img/home.png">
-	<br>
+	<hr>
 <img src="/client/public/img/home1.png">
 	<hr>
 <p>CATALOG PAGE<p>
