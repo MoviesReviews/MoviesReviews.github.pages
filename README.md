@@ -11,14 +11,14 @@
 	<li>Firebase- Hosting and Functions</li>
 </ul>
 <div>🧑‍💻 Functionality
-	<ul> Guest users: 
+	<ol> Guest users: 
 		<li>Guest users can see different reviews about movies they like</li>
 		<li>Read comments about different reviews</li>
-	</ul>
-	<ul> Logged in users:
+	</ol>
+	<ol> Logged in users:
 		<li>Logged users have extended functionalities with option to create/edit/delete reviews</li>
 		<li>Logged users have extended functionalities with option to create/delete comments</li>
-	</ul>
+	</ol>
 </div>
 
 ⚙️ Application Configurations
