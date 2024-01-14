@@ -19,7 +19,7 @@ import CreatedAlertProvider from './contexts/alertContext'
 
 
 function App() {
-
+  
   return (
     <>
       <div className="main-container yoga-template">

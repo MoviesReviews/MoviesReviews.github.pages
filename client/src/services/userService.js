@@ -1,6 +1,6 @@
 import * as requests from '../lib/requests'
 
-const baseUrl = 'http://localhost:3030/users'
+const baseUrl = import.meta.env.VITE_API_URL + '/users'
 
 export const register = async (email, password, username, category) => {
 
