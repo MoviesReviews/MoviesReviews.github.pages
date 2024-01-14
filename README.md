@@ -10,16 +10,16 @@
 	<li>HTML & CSS</li>
 	<li>Firebase- Hosting and Functions</li>
 </ul>
-<div>🧑‍💻 Functionality
-	<ol> Guest users: 
+<ol>🧑‍💻 Functionality
+	<ul> Guest users: 
 		<li>Guest users can see different reviews about movies they like</li>
 		<li>Read comments about different reviews</li>
-	</ol>
-	<ol> Logged in users:
+	</ul>
+	<ul> Logged in users:
 		<li>Logged users have extended functionalities with option to create/edit/delete reviews</li>
 		<li>Logged users have extended functionalities with option to create/delete comments</li>
-	</ol>
-</div>
+	</ul>
+</ol>
 
 ⚙️ Application Configurations
  Seeding sample data would happen once you run the application, including Test Accounts:
