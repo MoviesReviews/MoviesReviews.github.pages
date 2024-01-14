@@ -1,11 +1,18 @@
-MovieReviews - https://movie-reviews-853ef.web.app
-React JS project for SoftUni React course(2023)
+<h1>MovieReviews - https://movie-reviews-853ef.web.app</h1>
+<h3>React JS project for SoftUni React course(2023)</h3>
 
-⚒️ Technologies used:
-    React JS
-    React Router Dom
-    React Bootstrap 
-    Node.js
+<ul>
+	⚒️ Technologies used:
+	<li>React JS</li>
+	<li>React Router Dom</li>
+	<li>React Bootstrap</li>
+	<li>Node.js</li>
+</ul>
+
+    
+    
+     
+    
     HTML & CSS
     Firebase- Hosting and Functions
 
@@ -21,12 +28,17 @@ React JS project for SoftUni React course(2023)
     User: peter@abv.bg / password: 123456
     User: george@abv.bg / password: 123456
 
-👀 Screenshots: 
-HOME PAGE
+<div> 👀 Screenshots: 
+<p>HOME PAGE</p>
 <img src="/client/public/img/home.png">
+	<hr>
 <img src="/client/public/img/home1.png">
-CATALOG PAGE
+	<hr>
+<p>CATALOG PAGE<p>
+	<hr>
 <img src="/client/public/img/catalog.png">
-DETAILS PAGE
+	<hr>
+<p>DETAILS PAGE<p>
+	<hr>
 <img src="/client/public/img/details.png">
-
+</div>
