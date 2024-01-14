@@ -23,9 +23,10 @@ React JS project for SoftUni React course(2023)
 
 👀 Screenshots: 
 HOME PAGE
-![](/client/public/img/download.jpg)
-![](images/home1.png)
+<img src="/client/public/img/home.png" width="100">
+<img src="/client/public/img/home1.png" width="100">
 CATALOG PAGE
-![](images/catalog.png)
+<img src="/client/public/img/catalog.png" width="100">
 DETAILS PAGE
-![](images/details.png)
+<img src="/client/public/img/details.png" width="100">
+
