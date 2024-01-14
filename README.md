@@ -7,20 +7,13 @@
 	<li>React Router Dom</li>
 	<li>React Bootstrap</li>
 	<li>Node.js</li>
+	<li>HTML & CSS</li>
+	<li>Firebase- Hosting and Functions</li>
 </ul>
-
-    
-    
-     
-    
-    HTML & CSS
-    Firebase- Hosting and Functions
-
-🧑‍💻 Functionality
-
-    Guest users can see different reviews about movies they like and also read comments about them.
-    Logged users extend functionality with option to create/edit/delete reviews, and add/delete comments.
-
+<div>🧑‍💻 Functionality
+<p>Guest users can see different reviews about movies they like and also read comments about them.
+    Logged users extend functionality with option to create/edit/delete reviews, and add/delete comments.</p> 
+</div>
 
 ⚙️ Application Configurations
  Seeding sample data would happen once you run the application, including Test Accounts:
@@ -31,14 +24,9 @@
 <div> 👀 Screenshots: 
 <p>HOME PAGE</p>
 <img src="/client/public/img/home.png">
-	<hr>
+	<br>
 <img src="/client/public/img/home1.png">
 	<hr>
 <p>CATALOG PAGE<p>
-	<hr>
 <img src="/client/public/img/catalog.png">
-	<hr>
-<p>DETAILS PAGE<p>
-	<hr>
-<img src="/client/public/img/details.png">
 </div>
