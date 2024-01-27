@@ -29,8 +29,7 @@
 .btn:hover {
     list-style: none;
     text-decoration: none;
-    background-color: black;
-    border-color: black;
+    background-color: gray;
     color: white;
 }
 
