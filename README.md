@@ -14,10 +14,12 @@
 	<ul> - Guest users: 
 		<li>Guest users can see different reviews about movies they like</li>
 		<li>Read comments about different reviews</li>
+		<li>See what rating has been given from users</li>
 	</ul>
 	<ul>- Logged in users:
 		<li>Logged users have extended functionalities with option to create/edit/delete reviews</li>
 		<li>Logged users have extended functionalities with option to create/delete comments</li>
+		<li>Put a rating on the movie</li>
 	</ul>
 </div>
 
