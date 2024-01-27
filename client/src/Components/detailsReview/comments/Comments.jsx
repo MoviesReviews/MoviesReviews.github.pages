@@ -17,7 +17,12 @@ export default function Comments({ reviewId }) {
 
     const submitComment = async (values) => {
         try {
-
+            if (values.comment == '') {
+                setErrors(errors => ({ ...errors, emptyComment: true }))
+                return
+            } else {
+                setErrors(errors => ({ ...errors, emptyComment: false }))
+            }
             const newComment = await createComment(values.comment, reviewId)
             newComment.owner = authContext.username
             setComments(s => ([...s, newComment]))
@@ -48,9 +53,9 @@ export default function Comments({ reviewId }) {
                     <form onSubmit={onSubmit} className={styles['write-container']}>
                         <h3>Write a comment: </h3>
                         <label htmlFor="comment"></label>
-                        <input type="text" id="comment" name="comment" value={formValues.comment} onChange={onChange} />
+                        <input type="text" id="comment" name="comment" value={formValues.comment} onChange={onChange} className={errors.emptyComment == true && 'errorInput'} />
                         {errors.serverError && <p className="errorMsg">{errors.serverError}</p>}
-                        <button disabled={formValues.comment == '' ? true : false} className={`button ${styles.btn}`}>Post</button>
+                        <button className={`button ${styles.btn}`}>Post</button>
                     </form>
                 </>
             }
