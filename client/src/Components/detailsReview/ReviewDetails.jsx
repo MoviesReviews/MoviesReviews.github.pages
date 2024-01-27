@@ -7,6 +7,7 @@ import { AuthContext } from "../../contexts/authContext"
 import { Link } from 'react-router-dom';
 import DeleteModal from "./modal/DeleteModal"
 import { LoadComponent } from "../loadComponent/LoadComponent"
+import RatingComponent from "./rating/RatingComponent"
 
 
 function ReviewDetails() {
@@ -49,19 +50,7 @@ function ReviewDetails() {
                 </div>
 
                 <div className={styles['details-container-right']}>
-                    <div className={styles['rating-container']}>
-                        <div>
-                            <h2 className={styles['rating-title']}>Rating</h2>
-                        </div>
-                        <div>
-                            <p>⭐⭐⭐⭐⭐</p>
-                            <p>⭐⭐⭐⭐</p>
-                            <p>⭐⭐⭐</p>
-                            <p>⭐⭐</p>
-                            <p>⭐</p>
-                        </div>
-
-                    </div>
+                    <RatingComponent ownerId={review._ownerId}/>
                     <label htmlFor="description">Description:</label>
                     <p id="description" className={styles.description}>{review.description}</p>
                     <div className="category">

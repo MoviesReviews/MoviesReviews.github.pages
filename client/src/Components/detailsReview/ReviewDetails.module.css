@@ -1,9 +1,9 @@
-.imgContainer{
+.imgContainer {
     overflow: hidden;
     padding: 2em;
 }
 
-.img{
+.img {
     border-radius: 5%;
     width: 20em;
     height: 20em;
@@ -29,15 +29,6 @@
     flex-basis: 50%;
 }
 
-.rating-container{
-    padding: 2em 0;
-    display: flex;
-    gap: 2em;
-}
-
-.rating-title{
-    font-size: 20px;
-}
 
 label {
     font-size: 16px;

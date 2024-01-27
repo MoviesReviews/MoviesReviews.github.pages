@@ -45,12 +45,12 @@ export default function Comments({ reviewId }) {
 
             {authContext.isAuthenticated &&
                 <>
-                    <form onSubmit={onSubmit} className={styles['write-container']}> 
+                    <form onSubmit={onSubmit} className={styles['write-container']}>
                         <h3>Write a comment: </h3>
                         <label htmlFor="comment"></label>
                         <input type="text" id="comment" name="comment" value={formValues.comment} onChange={onChange} />
                         {errors.serverError && <p className="errorMsg">{errors.serverError}</p>}
-                        <button className={`button ${styles.btn}`}>Post</button>
+                        <button disabled={formValues.comment == '' ? true : false} className={`button ${styles.btn}`}>Post</button>
                     </form>
                 </>
             }

@@ -1,0 +1,30 @@
+.rating-container {
+    padding: 2em 0;
+    display: flex;
+    gap: 2.5em;
+}
+
+.rating-btns-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.rating-btn {
+    margin: 5px;
+    padding: 2px;
+    font-size: 12px;
+}
+
+.rating-title {
+    font-size: 20px;
+}
+
+.votes{
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+}
+
+.votes p{
+    font-weight: 600;
+}
