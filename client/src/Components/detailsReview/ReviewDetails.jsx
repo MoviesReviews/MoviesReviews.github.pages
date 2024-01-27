@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react"
 import * as reviewsSwervice from '../../services/reviewsServices'
-import {  useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import styles from './ReviewDetails.module.css'
 import Comments from "./comments/Comments"
 import { AuthContext } from "../../contexts/authContext"
@@ -24,8 +24,8 @@ function ReviewDetails() {
     }, [id])
     const categoryFormatted = review.category?.map(c => c.charAt(0).toUpperCase() + c.slice(1))
 
-    if(isLoading){
-        return <LoadComponent/>
+    if (isLoading) {
+        return <LoadComponent />
     }
 
     return (
@@ -49,6 +49,19 @@ function ReviewDetails() {
                 </div>
 
                 <div className={styles['details-container-right']}>
+                    <div className={styles['rating-container']}>
+                        <div>
+                            <h2 className={styles['rating-title']}>Rating</h2>
+                        </div>
+                        <div>
+                            <p>⭐⭐⭐⭐⭐</p>
+                            <p>⭐⭐⭐⭐</p>
+                            <p>⭐⭐⭐</p>
+                            <p>⭐⭐</p>
+                            <p>⭐</p>
+                        </div>
+
+                    </div>
                     <label htmlFor="description">Description:</label>
                     <p id="description" className={styles.description}>{review.description}</p>
                     <div className="category">

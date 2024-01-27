@@ -5,7 +5,7 @@
 }
 
 div .content-container{
-    background-color: rgba(254, 134, 212, 50%);
+    background-color: rgba(251, 162, 220, 0.266);
     padding: 3em 5em;
     border-radius: 2em;
     display: flex;
@@ -27,6 +27,7 @@ div .content-container{
 .heading{
     font-size: 32px;
     margin-bottom: 1.5em;
+    line-height: normal;
 }
 
 .errorInput{

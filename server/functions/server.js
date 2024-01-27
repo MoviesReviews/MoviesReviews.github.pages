@@ -177,8 +177,8 @@
             .filter(s => s != '')
             .map(x => x.split('='))
             .reduce((p, [k, v]) => Object.assign(p, { [k]: decodeURIComponent(v) }), {});
-        // const body = await parseBody(req);
-        const body = req.body;
+        const body = await parseBody(req);
+        // const body = req.body;
 
         return {
             serviceName,

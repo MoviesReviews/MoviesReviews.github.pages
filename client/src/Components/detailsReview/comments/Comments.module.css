@@ -1,4 +1,4 @@
-.comments-container{
+.comments-container {
     margin-bottom: 2em;
     display: flex;
     gap: 1.5em;
@@ -6,23 +6,27 @@
     padding: 1em;
 }
 
-.comments{
+.comments {
     background-color: rgb(238, 214, 236);
     border-radius: 2%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     padding: 1em;
 }
 
-.btn{
+.write-container {
+    padding-left: 2em;
+}
+
+.btn {
     border-radius: 2em;
     border: 1px solid rgb(248, 246, 246);
     margin: 0.2em;
     color: black;
 }
 
-.btn:hover{
+.btn:hover {
     list-style: none;
     text-decoration: none;
     background-color: black;
@@ -30,20 +34,20 @@
     color: white;
 }
 
-.login{
+.login {
     padding: 0.5em;
     background-color: bisque;
     border-radius: 10%;
     margin-left: 1em;
 }
 
-.login:hover{
+.login:hover {
     background-color: black;
     color: white;
     text-decoration: none;
 }
 
-.authenticate{
+.authenticate {
     margin-top: 2em;
     font-size: smaller;
 }
