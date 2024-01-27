@@ -38,3 +38,9 @@
 <p>CATALOG PAGE<p>
 <img src="/client/public/img/catalog.png">
 </div>
+<p>DETAILS PAGE</p>
+<img src="/client/public/img/details1">
+<hr>
+<img src="/client/public/img/details2">
+
+
