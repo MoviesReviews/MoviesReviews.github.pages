@@ -33,12 +33,14 @@ function ReviewDetails() {
         <section className='section-container'>
             <div className={`content-container ${styles['main-container']}`}>
                 <div className="details-container-left">
-                    <h1 className='heading'>Details about review: {review.title}</h1>
-                    <label htmlFor="author">Wrote: {review.owner?.username}</label>
-                    <p id="author">{ }</p>
+                    <div className={styles.content}>
+                        <h1 className='heading'>Details about review: </h1>
+                        <p className={styles.title}>🎬 {review.title}</p>
+                    </div>
                     <p className={styles.imgContainer}>
                         <img className={`img ${styles.img}`} src={review.img} alt="image" />
                     </p>
+                    <p className={styles.author}>Wrote: {review.owner?.username} </p>
                     {review._ownerId == _id &&
                         <div className={styles['btn-container']}>
                             <Link to={`/movie-reviews/${id}/edit`}>
@@ -50,7 +52,7 @@ function ReviewDetails() {
                 </div>
 
                 <div className={styles['details-container-right']}>
-                    <RatingComponent ownerId={review._ownerId}/>
+                    <RatingComponent ownerId={review._ownerId} />
                     <label htmlFor="description">Description:</label>
                     <p id="description" className={styles.description}>{review.description}</p>
                     <div className="category">

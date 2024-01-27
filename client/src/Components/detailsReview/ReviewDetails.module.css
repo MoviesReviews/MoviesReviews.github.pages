@@ -1,12 +1,28 @@
 .imgContainer {
     overflow: hidden;
-    padding: 2em;
+    margin: 6em 0;
 }
 
+.content{
+    padding-right: 10em;
+    border-bottom: 1px solid black;
+}
 .img {
     border-radius: 5%;
     width: 20em;
     height: 20em;
+}
+
+.title{
+    margin-bottom: 2em;
+    font-size: 20px;
+    padding-bottom: 2em;
+    font-weight: 500;
+    padding-left: 1em;
+}
+
+.author{
+    margin: 2em 0;
 }
 
 .main-container {
@@ -14,12 +30,14 @@
     justify-content: space-between;
 }
 
-.details-container-left {
+.details-container-left{
     display: flex;
     flex-direction: column;
     gap: 2em;
-    flex-basis: 40%;
+    flex-basis: 50%;
+    border: 2px solid black;
 }
+
 
 .details-container-right {
     /* padding-top: 5em; */
