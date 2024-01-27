@@ -4,15 +4,25 @@ import styles from './Reviews.module.css'
 import Card from "./card/Card"
 import CreatedAlert from "./createdReviewAlert/CreatedAlert"
 import { CreatedAlertContext } from "../../contexts/alertContext"
+import { LoadComponent } from "../loadComponent/LoadComponent"
 
 function Reviews() {
     const [reviews, setReviews] = useState([])
+    const [isLoading, setIsLoading] = useState(false)
     const { createdReview } = useContext(CreatedAlertContext)
     const [showCreatedAlert, setShowCreatedAlert] = useState(createdReview)
 
     useEffect(() => {
-        reviewService.getAll().then(setReviews)
+        setIsLoading(true)
+        reviewService.getAll().then((data) => {
+            setReviews(data)
+            setIsLoading(false)
+        })
     }, [])
+
+    if(isLoading){
+        return <LoadComponent/>
+    }
 
     return (
         <div className={styles.background}>

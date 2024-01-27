@@ -6,21 +6,27 @@ import Comments from "./comments/Comments"
 import { AuthContext } from "../../contexts/authContext"
 import { Link } from 'react-router-dom';
 import DeleteModal from "./modal/DeleteModal"
+import { LoadComponent } from "../loadComponent/LoadComponent"
 
 
 function ReviewDetails() {
     const [review, setReview] = useState({})
     const { id } = useParams()
     const { _id } = useContext(AuthContext)
-
+    const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
+        setIsLoading(true)
         reviewsSwervice.getOne(id).then(data => {
             setReview(data)
+            setIsLoading(false)
         })
     }, [id])
     const categoryFormatted = review.category?.map(c => c.charAt(0).toUpperCase() + c.slice(1))
 
+    if(isLoading){
+        return <LoadComponent/>
+    }
 
     return (
         <section className='section-container'>
