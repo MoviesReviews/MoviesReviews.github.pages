@@ -13,6 +13,16 @@
     margin: 5px;
     padding: 2px;
     font-size: 12px;
+    background-color: rgb(233, 233, 153);
+    border-color: rgb(233, 233, 153);
+    border-radius: 6px;
+}
+
+.rating-btn:hover{
+    background-color: rgb(200, 197, 197);
+    border-color: rgb(200, 197, 197);
+    color: white;
+    font-size: 16px;
 }
 
 .rating-title {

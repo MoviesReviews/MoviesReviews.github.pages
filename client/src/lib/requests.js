@@ -19,6 +19,10 @@ async function request(method, url, body) {
 
     const result = await response.json()
 
+    if (response.status == 403) {
+        return localStorage.removeItem('token')
+    }
+
     if (response.ok == false) {
         throw new Error(result.message)
     }

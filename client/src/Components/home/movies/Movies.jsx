@@ -1,15 +1,25 @@
 import { useEffect, useState } from "react"
 import * as  reviewsService from "../../../services/reviewsServices"
 import { Link } from 'react-router-dom';
+import { LoadComponent } from "../../loadComponent/LoadComponent";
 
 function Movies() {
     const [latest, setLatest] = useState([])
+    const [isLoading, setIsLoading] = useState(false)
+
 
     useEffect(() => {
-        reviewsService.getLatest().then(setLatest)
+        setIsLoading(true)
+        reviewsService.getLatest().then((data) => {
+            setLatest(data)
+            setIsLoading(false)
+        })
     }, [])
 
-
+    if (isLoading) {
+        return <LoadComponent />
+    }
+    
     return (
         <div className="inside-container service-section">
             <div className="row sections-detail">

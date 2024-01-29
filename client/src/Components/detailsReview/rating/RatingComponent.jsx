@@ -74,7 +74,7 @@ export default function RatingComponent({ownerId}) {
             <p>{ratings.filter(r => r.starRating == 'twoStars').length}  votes</p>
             <p>{ratings.filter(r => r.starRating == 'oneStar').length}  votes</p>
         </div>
-        { canVote === false && <p>You awready voted!</p> }
+        { canVote === false && <p>You already voted!</p> }
 
     </div >
 }

@@ -99,7 +99,7 @@ label {
     list-style: none;
     text-decoration: none;
     background-color: rgb(150, 2, 2);
-    border-color: rgb(150, 2, 2);
+    border-color: rgb(150, 2, 2 );
 }
 
 .editBtn:hover {
