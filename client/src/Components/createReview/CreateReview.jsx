@@ -85,10 +85,10 @@ function CreateReview() {
     }
 
     const imgValidatator = (e) => {
-        if (!e.target.value.startsWith('http://')) {
-            setErrors(s => ({ ...s, img: 'Image must start with http://' }))
-        } else {
+        if (e.target.value.startsWith('http://') || e.target.value.startsWith('https://')) {
             setErrors(s => ({ ...s, img: '' }))
+        } else {
+            setErrors(s => ({ ...s, img: 'Image must start with http(s)://' }))
         }
     }
 
@@ -110,7 +110,7 @@ function CreateReview() {
 
                     <Form.Group className={`mb-3 ${styles['description-container']}`}>
                         <Form.Label htmlFor="img">* Image: </Form.Label>
-                        <input value={formState.img} onChange={changeHandler} className={errors.img && styles.errorInput} onBlur={imgValidatator} name='img' id='img' placeholder='http://..' />
+                        <input value={formState.img} onChange={changeHandler} className={errors.img && styles.errorInput} onBlur={imgValidatator} name='img' id='img' placeholder='http(s)://..' />
                         {errors.img && <p className={styles.errorMsg}>{errors.img}</p>}
                     </Form.Group>
 

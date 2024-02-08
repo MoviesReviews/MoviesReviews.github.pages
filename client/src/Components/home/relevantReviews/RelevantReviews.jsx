@@ -10,7 +10,6 @@ function RelevantReviews() {
     reviewsService.getLatest().then(d => setLatest(d[0]))
   }, [])
 
-
   return (
     <div className={`best-class-club ${styles.wrapper}`}>
       <div className="row best-class-sections-detail">
