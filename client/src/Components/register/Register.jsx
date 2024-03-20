@@ -8,9 +8,10 @@ import { useContext, useState } from 'react';
 import { AuthContext } from '../../contexts/authContext';
 import { Link } from 'react-router-dom';
 
+
 function Register() {
     const { registerHandler, errors } = useContext(AuthContext)
-    const [ inputErrors, setInputErrors ] = useState({})
+    const [inputErrors, setInputErrors] = useState({})
     const { formValues, onChange, onSubmit } = useForm(registerHandler, {
         username: '',
         email: '',
@@ -34,10 +35,10 @@ function Register() {
     }
 
     const confirmPasswordValidator = () => {
-        if(formValues.password !== formValues.rePass){
-            setInputErrors(s => ({...s, rePass: 'Passwords should match'}))
-        } else{
-            setInputErrors(s => ({...s, rePass: ''}))
+        if (formValues.password !== formValues.rePass) {
+            setInputErrors(s => ({ ...s, rePass: 'Passwords should match' }))
+        } else {
+            setInputErrors(s => ({ ...s, rePass: '' }))
         }
     }
 
@@ -62,7 +63,7 @@ function Register() {
             <div className="content-container">
 
                 <Form onSubmit={onSubmit}>
-                <h1 className='heading'>Register</h1>
+                    <h1 className='heading'>Register</h1>
                     <Form.Group as={Row} className="mb-3">
                         <Form.Label column sm={2}>
                             Username
@@ -78,7 +79,7 @@ function Register() {
                             Email
                         </Form.Label>
                         <Col sm={10}>
-                            <Form.Control type="email" placeholder="Email" name='email' id='email' value={formValues.email} onChange={onChange} className={errors.serverError || inputErrors.email && 'errorInput'} onBlur={emailValidator}/>
+                            <Form.Control type="email" placeholder="Email" name='email' id='email' value={formValues.email} onChange={onChange} className={errors.serverError || inputErrors.email && 'errorInput'} onBlur={emailValidator} />
                             {inputErrors?.email && <p className='errorMsg'>{inputErrors?.email}</p>}
                         </Col>
                     </Form.Group>
@@ -88,7 +89,7 @@ function Register() {
                             Password
                         </Form.Label>
                         <Col sm={10}>
-                            <Form.Control type="password" placeholder="Password" name='password' id='password' value={formValues.password} onChange={onChange} onBlur={passwordValidator} className={inputErrors.password && 'errorInput'}/>
+                            <Form.Control type="password" placeholder="Password" name='password' id='password' value={formValues.password} onChange={onChange} onBlur={passwordValidator} className={inputErrors.password && 'errorInput'} />
                             {inputErrors?.password && <p className='errorMsg'>{inputErrors?.password}</p>}
                         </Col>
                     </Form.Group>
@@ -98,10 +99,21 @@ function Register() {
                             Confirm Password
                         </Form.Label>
                         <Col sm={10}>
-                            <Form.Control type="password" placeholder="Confirm Password" name='rePass' id='rePass' value={formValues.rePass} onChange={onChange} onBlur={confirmPasswordValidator} className={inputErrors.rePass && 'errorInput'}/>
+                            <Form.Control type="password" placeholder="Confirm Password" name='rePass' id='rePass' value={formValues.rePass} onChange={onChange} onBlur={confirmPasswordValidator} className={inputErrors.rePass && 'errorInput'} />
                             {inputErrors?.rePass && <p className='errorMsg'>{inputErrors?.rePass}</p>}
                         </Col>
                     </Form.Group>
+
+                    {/* <Button
+                        component="label"
+                        role={undefined}
+                        variant="contained"
+                        tabIndex={-1}
+                        startIcon={<CloudUploadIcon />}
+                    >
+                        Upload file
+                        <VisuallyHiddenInput type="file" />
+                    </Button> */}
 
                     <Form.Group className='mb-3'>
                         <div className={styles.categories}>
@@ -173,6 +185,7 @@ function Register() {
                             <Button type="submit">Sign in</Button>
                         </Col>
                     </Form.Group>
+                    <Button variant="contained">Contained</Button>
                 </Form>
             </div>
         </section>

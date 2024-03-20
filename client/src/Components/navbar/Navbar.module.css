@@ -2,33 +2,40 @@
     background-color: rgb(123, 108, 2013, 25%);
 }
 
-.navbar{
+.navbar {
     display: flex;
     justify-content: space-between;
 }
 
-.navbar-container .link{
-    border-radius: 30%;
-    padding: 0.5;
+.navbar-container .link {
+    border-radius: 50%;
+    /* padding: 0.5; */
     margin-bottom: 0.5em;
     font-weight: 500;
 }
 
-.navbar-container .main{
+.navbar-container .main {
     margin-right: 1em;
 }
 
-.navbar-container .link:hover{
+.navbar-container .link:hover {
     background-color: rgba(254, 134, 212, 100%);
 }
 
-.helloMsg{
+.helloMsg {
     padding-top: 12px;
 }
 
-.user{
-    margin-right: 1em;
-    margin-top: 0.5em;
-    color: rgb(200, 110, 200);
-    /* padding: 5px; */
+.user {
+    margin-right: 2em;
+    color: white;
+    font-size: smaller;
+    background-color: rgb(200, 110, 200);
+    padding: 0.7em;
+    border-radius: 5em;
+}
+
+.user:hover {
+    color: black;
+    cursor: pointer;
 }

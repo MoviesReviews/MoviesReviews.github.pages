@@ -2,9 +2,10 @@ import * as request from '../lib/requests'
 
 const baseUrl = import.meta.env.VITE_API_URL + '/jsonstore/ratings'
 
-export const rateMovie = async (reviewId, numberStars) => {
+export const rateMovie = async (reviewId, numberStars, userId) => {
     const result = await request.post(`${baseUrl}/${reviewId}`, {
-        starRating : numberStars
+        starRating : numberStars,
+        ratingOwnerId : userId
     })
     return Object.values(result)
     // const previousRatings = await getRatingByReview(reviewId)
