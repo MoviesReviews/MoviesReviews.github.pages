@@ -30,7 +30,7 @@ function NavbarMenu() {
 
                         {authContext.isAuthenticated &&
                             <Nav>
-                                <p className={`${styles.link} ${styles.user}`}>{authContext.username}</p>
+                                <Nav.Link as={Link} to='/profile' className={`${styles.link} ${styles.user}`}>{authContext.username}</Nav.Link>
                                 <Nav.Link as={Link} to='/create-review' className={`${styles.link} ${styles.main}`}>Write Review</Nav.Link>
                                 <Nav.Link as={Link} to='/logout' className={`${styles.link} ${styles.main}`}>Logout</Nav.Link>
                             </Nav>

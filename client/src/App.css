@@ -6,7 +6,7 @@
 
 div .content-container{
     background-color: rgba(251, 162, 220, 0.266);
-    padding: 3em 5em;
+    padding: 5em 5em;
     border-radius: 2em;
     display: flex;
     margin-top: 8em;
@@ -27,7 +27,7 @@ div .content-container{
 
 .heading{
     font-size: 32px;
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
     line-height: normal;
 }
 

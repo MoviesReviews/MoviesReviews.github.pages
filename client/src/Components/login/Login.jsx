@@ -34,7 +34,7 @@ function Login() {
 
                     {errors.loginErrorMsg && <p className={styles.msg}>Error: {errors.loginErrorMsg}</p>}
                     <p className={styles.registerMsg}>You already have an account? Go to <Link className={styles.register} to='/register'>Register</Link></p>
-                    <Button variant="primary" type="submit">
+                    <Button variant="primary" type="submit" className='button'>
                         Submit
                     </Button>
                 </Form>

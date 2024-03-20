@@ -13,9 +13,9 @@ import AuthProvider from './contexts/authContext'
 import { Logout } from './Components/logout/Logout'
 import EditReview from './Components/editReview/editReview'
 import AuthGuard from './guards/AuthGuard'
-import IsAuthorizedGuard from './guards/IsAuthorizedGuard'
 import NotAuthorized from './Components/unauthorized/NotAuthorized'
 import CreatedAlertProvider from './contexts/alertContext'
+import Profile from './Components/profile/Profile'
 
 
 function App() {
@@ -36,10 +36,9 @@ function App() {
                 <Route path='/create-review' element={<CreateReview />} />
                 <Route path='/movie-reviews/:id/edit' element={<EditReview />} />
               </Route>
-              <Route element={<IsAuthorizedGuard />}>
-              </Route>
               <Route path='/unauthorized' element={<NotAuthorized />} />
               <Route path='/login' element={<Login />} />
+              <Route path='/profile' element={<Profile />} />
               <Route path='/register' element={<Register />} />
               <Route path='/logout' element={<Logout />} />
               <Route path='*' element={<NotFound />} />

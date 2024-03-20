@@ -62,11 +62,11 @@ function Register() {
         <section className='section-container'>
             <div className="content-container">
 
-                <Form onSubmit={onSubmit}>
-                    <h1 className='heading'>Register</h1>
+                <Form onSubmit={onSubmit} className={styles.form}>
+                    <h1 className='heading' style={{'margin-bottom' : '2em'}}>Register</h1>
                     <Form.Group as={Row} className="mb-3">
                         <Form.Label column sm={2}>
-                            Username
+                            Username : 
                         </Form.Label>
                         <Col sm={10}>
                             <Form.Control type="username" placeholder="Username" name='username' id='username' value={formValues.username} onChange={onChange} onBlur={usuernameValidator} className={inputErrors.username && 'errorInput'} />
@@ -76,7 +76,7 @@ function Register() {
 
                     <Form.Group as={Row} className="mb-3">
                         <Form.Label column sm={2}>
-                            Email
+                            Email : 
                         </Form.Label>
                         <Col sm={10}>
                             <Form.Control type="email" placeholder="Email" name='email' id='email' value={formValues.email} onChange={onChange} className={errors.serverError || inputErrors.email && 'errorInput'} onBlur={emailValidator} />
@@ -86,7 +86,7 @@ function Register() {
 
                     <Form.Group as={Row} className="mb-3">
                         <Form.Label column sm={2}>
-                            Password
+                            Password : 
                         </Form.Label>
                         <Col sm={10}>
                             <Form.Control type="password" placeholder="Password" name='password' id='password' value={formValues.password} onChange={onChange} onBlur={passwordValidator} className={inputErrors.password && 'errorInput'} />
@@ -96,7 +96,7 @@ function Register() {
 
                     <Form.Group as={Row} className="mb-3" >
                         <Form.Label column sm={2}>
-                            Confirm Password
+                            Confirm Password : 
                         </Form.Label>
                         <Col sm={10}>
                             <Form.Control type="password" placeholder="Confirm Password" name='rePass' id='rePass' value={formValues.rePass} onChange={onChange} onBlur={confirmPasswordValidator} className={inputErrors.rePass && 'errorInput'} />
@@ -182,10 +182,9 @@ function Register() {
 
                     <Form.Group as={Row} className="mb-3">
                         <Col sm={{ span: 10, offset: 2 }}>
-                            <Button type="submit">Sign in</Button>
+                            <Button type="submit" className='button'>Sign in</Button>
                         </Col>
                     </Form.Group>
-                    <Button variant="contained">Contained</Button>
                 </Form>
             </div>
         </section>

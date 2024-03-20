@@ -25,3 +25,5 @@ export const login = async (email, password) => {
 export const logout = async () => {
     await requests.get(`${baseUrl}/logout`)
 }
+
+export const getInformation = async (userId) => await requests.get(`${baseUrl}/me`)
