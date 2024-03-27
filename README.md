@@ -39,8 +39,8 @@
 <img src="/client/public/img/catalog.png">
 </div>
 <p>DETAILS PAGE</p>
-<img src="/client/public/img/details1.png">
+<img src="/client/public/img/details 1.png">
 <hr>
-<img src="/client/public/img/details2.png">
+<img src="/client/public/img/details 2.png">
 
 
